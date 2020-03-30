@@ -34,7 +34,18 @@ component QLinkMaster is
 end component;
 
 -- Define RAM component
-component ram_module is
+component inferred_RAM_module is
+generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
+    Port ( CLK_I    : in  STD_LOGIC := '0';
+           RESET_I  : in  STD_LOGIC := '0';
+           ADDR_B_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+           DATA_B_I : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+           DATA_B_O : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+           WR_I     : in  STD_LOGIC := '0';
+           RD_I     : in  STD_LOGIC := '0');
+end component;
+
+component block_RAM_module is
 generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
     Port ( CLK_I    : in  STD_LOGIC := '0';
            RESET_I  : in  STD_LOGIC := '0';
@@ -55,14 +66,15 @@ end component;
   signal wr,rd     : std_logic;
   
   -- Data signals
-  signal data_ram  : std_logic_vector(31 downto 0);
+  signal data_ram1  : std_logic_vector(31 downto 0);
+  signal data_ram2  : std_logic_vector(31 downto 0);
   
   
   signal leds : std_logic_vector(7 downto 0);
 begin
 
 LEDS_O<=leds;
-data_r <= data_ram; -- OR all data signals together
+data_r <= data_ram1 or data_ram2; -- OR all data signals together
 
 QLINK1: QLinkMaster
   generic map (CLK_I_PERIOD => 10.0) -- Instantiate the QLinkMaster for 100MHz input clock   
@@ -80,15 +92,26 @@ QLINK1: QLinkMaster
                LED_O        => STATUSLED_O);
 
 
-RAM0: ram_module
+RAM0: inferred_RAM_module
 generic map(BASE_ADDR => x"a")
 port map(   CLK_I     => clk48,
             RESET_I   => sys_reset,
             ADDR_B_I  => adr,
             DATA_B_I  => data_w,
-            DATA_B_O  => data_ram,
+            DATA_B_O  => data_ram1,
             WR_I      => wr,
             RD_I      => rd);
+
+RAM1: block_RAM_module
+generic map(BASE_ADDR => x"b")
+port map(   CLK_I     => clk48,
+            RESET_I   => sys_reset,
+            ADDR_B_I  => adr,
+            DATA_B_I  => data_w,
+            DATA_B_O  => data_ram2,
+            WR_I      => wr,
+            RD_I      => rd);
+
 
 
 --process(clk48,sys_reset)

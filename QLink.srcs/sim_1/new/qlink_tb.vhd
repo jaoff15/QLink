@@ -140,7 +140,7 @@ begin
             when 0      => D := ASCII_HASHTAG;
             when 1      => D := ASCII_w;
             when 2      => D := ASCII_COLON;
-            when 3      => D := ASCII_A;
+            when 3      => D := ASCII_B;
             when 4      => D := ASCII_B;
  --           when 5      => D := ASCII_COLON;
             when 5      => D := ASCII_1;
@@ -157,7 +157,7 @@ begin
             when 15     => D := ASCII_HASHTAG;
             when 16     => D := ASCII_rr;
             when 17     => D := ASCII_COLON;
-            when 18     => D := ASCII_a;
+            when 18     => D := ASCII_B;
             when 19     => D := ASCII_b;
 --            when 19     => D := ascii_cr;
             when others => D := (others => '0');
