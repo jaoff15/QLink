@@ -1,0 +1,116 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Mon Mar 30 15:31:51 2020
+| Host         : JacobOffersen running 64-bit Ubuntu 19.10
+| Command      : report_control_sets -verbose -file receiver_top_control_sets_placed.rpt
+| Design       : receiver_top
+| Device       : xc7s25
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    47 |
+| Unused register locations in slices containing registers |    72 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            8 |
+|      8 |           14 |
+|     10 |            1 |
+|     12 |            1 |
+|     14 |            3 |
+|    16+ |           20 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              14 |            4 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              82 |           14 |
+| Yes          | No                    | No                     |              14 |            4 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            1346 |          219 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+| Clock Signal |                Enable Signal                |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[7]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[6]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[5]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[4]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[3]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[2]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[1]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/p_0_in[0]                     | QLINK1/sys_reset                       |                1 |              2 |
+|  clk48_BUFG  | QLINK1/DECODE/nxt_bitcnt                    | QLINK1/DECODE/nxt_bitcnt[3]_i_1_n_0    |                2 |              8 |
+|  clk48_BUFG  | QLINK1/ENCODE/sel                           | QLINK1/ENCODE/subcnt[3]_i_1__0_n_0     |                2 |              8 |
+|  clk48_BUFG  | QLINK1/ENCODE/nxt_bitcnt                    | QLINK1/ENCODE/nxt_bitcnt[3]_i_1__0_n_0 |                1 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/adr_reg[7]_0[1]               | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/adr_reg[7]_0[0]               | QLINK1/sys_reset                       |                1 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[0]                          | QLINK1/sys_reset                       |                1 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[1]                          | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[2]                          | QLINK1/sys_reset                       |                1 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[3]                          | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[4]                          | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[7]                          | QLINK1/sys_reset                       |                1 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[5]                          | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  | QLINK1/DECODE/E[6]                          | QLINK1/sys_reset                       |                2 |              8 |
+|  clk48_BUFG  |                                             | QLINK1/DECODE/subcnt[3]_i_1_n_0        |                2 |              8 |
+|  clk48_BUFG  | QLINK1/ENCODE/nxt_char_cnt_reg[0][0]        | QLINK1/sys_reset                       |                2 |             10 |
+|  clk48_BUFG  | QLINK1/sel                                  | QLINK1/sys_reset                       |                1 |             12 |
+|  clk48_BUFG  |                                             |                                        |                4 |             14 |
+|  clk48_BUFG  | QLINK1/enc_wr                               | QLINK1/sys_reset                       |                1 |             14 |
+|  clk48_BUFG  | QLINK1/ENCODE/E[0]                          |                                        |                4 |             14 |
+|  clk48_BUFG  | QLINK1/DECODE/FSM_onehot_rx_state_reg[0][0] | QLINK1/sys_reset                       |                6 |             38 |
+|  clk48_BUFG  | QLINK1/RAM_reg[6][31][0]                    | QLINK1/sys_reset                       |               11 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[7][31][0]                    | QLINK1/sys_reset                       |                6 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[8][0][0]                     | QLINK1/sys_reset                       |                9 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[9][31][0]                    | QLINK1/sys_reset                       |                9 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[0][31][0]                    | QLINK1/sys_reset                       |               10 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[2][31][0]                    | QLINK1/sys_reset                       |                7 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[10][31][0]                   | QLINK1/sys_reset                       |               11 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[5][31][0]                    | QLINK1/sys_reset                       |                9 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[1][31][0]                    | QLINK1/sys_reset                       |               12 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[4][0][0]                     | QLINK1/sys_reset                       |                9 |             64 |
+|  clk48_BUFG  | QLINK1/eqOp                                 | QLINK1/SR[0]                           |               32 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[12][31][0]                   | QLINK1/sys_reset                       |                8 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[11][31][0]                   | QLINK1/sys_reset                       |                8 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[13][31][0]                   | QLINK1/sys_reset                       |               11 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[3][31][0]                    | QLINK1/sys_reset                       |                7 |             64 |
+|  clk48_BUFG  | QLINK1/E[0]                                 | QLINK1/sys_reset                       |                5 |             64 |
+|  clk48_BUFG  | QLINK1/nxt_timestamp                        | QLINK1/sys_reset                       |                9 |             64 |
+|  clk48_BUFG  | QLINK1/RAM_reg[14][31][0]                   | QLINK1/sys_reset                       |                7 |             64 |
+|  clk48_BUFG  |                                             | QLINK1/sys_reset                       |               12 |             74 |
++--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7s25ftgb196-1" LaunchTime="1585575022">
+  <File Type="VDS-TIMING-PB" Name="receiver_top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="receiver_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="receiver_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="receiver_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="receiver_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="receiver_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="receiver_top.vds"/>
+  <File Type="REPORTS-TCL" Name="receiver_top_reports.tcl"/>
+  <File Type="PA-TCL" Name="receiver_top.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/QLINK/decode_serial.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/QLINK/encode_serial.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/QLINK/mmcm48.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/QLINK/qlinkmaster.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram_module.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/receiver_top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/receiver_top.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/QLink_2020/QLINK/__qlinkmaster.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/QLINK/__qlinkmaster.vhd"/>
+        <Attr Name="ImportTime" Val="1585038809"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="receiver_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/QLink_2020/constraints_copy.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/QLink_2020/constraints_copy.xdc"/>
+        <Attr Name="ImportTime" Val="1585039059"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
