@@ -7,7 +7,7 @@ use ieee.std_logic_unsigned.all;
 
 
 
-entity inferred_RAM_module is
+entity distributed_RAM_module is
 --generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
 generic  ( BASE_ADDR : integer range 0 to 15);
     Port ( CLK_I    : in  STD_LOGIC := '0';
@@ -17,9 +17,9 @@ generic  ( BASE_ADDR : integer range 0 to 15);
            DATA_B_O : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
            WR_I     : in  STD_LOGIC := '0';
            RD_I     : in  STD_LOGIC := '0');
-end inferred_RAM_module;
+end distributed_RAM_module;
 
-architecture Behavioral of inferred_RAM_module is
+architecture Behavioral of distributed_RAM_module is
 
 --    signal addr_signal : std_logic_vector(7 downto 0) := (others => '0');
     signal addr_signal : integer range 0 to 15 := 0;        

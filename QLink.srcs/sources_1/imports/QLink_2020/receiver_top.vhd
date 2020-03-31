@@ -34,7 +34,7 @@ component QLinkMaster is
 end component;
 
 -- Define RAM component
-component inferred_RAM_module is
+component distributed_RAM_module is
 --generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
 generic  ( BASE_ADDR : integer range 0 to 15);
     Port ( CLK_I    : in  STD_LOGIC := '0';
@@ -93,7 +93,7 @@ QLINK1: QLinkMaster
                LED_O        => STATUSLED_O);
 
 
-RAM0: inferred_RAM_module
+RAM0: distributed_RAM_module
 --generic map(BASE_ADDR => x"a")
 generic map(BASE_ADDR => 10)
 port map(   CLK_I     => clk48,
