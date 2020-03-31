@@ -35,7 +35,8 @@ end component;
 
 -- Define RAM component
 component inferred_RAM_module is
-generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
+--generic  ( BASE_ADDR : std_logic_vector(3 downto 0) := (others => '0'));
+generic  ( BASE_ADDR : integer range 0 to 15);
     Port ( CLK_I    : in  STD_LOGIC := '0';
            RESET_I  : in  STD_LOGIC := '0';
            ADDR_B_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
@@ -93,7 +94,8 @@ QLINK1: QLinkMaster
 
 
 RAM0: inferred_RAM_module
-generic map(BASE_ADDR => x"a")
+--generic map(BASE_ADDR => x"a")
+generic map(BASE_ADDR => 10)
 port map(   CLK_I     => clk48,
             RESET_I   => sys_reset,
             ADDR_B_I  => adr,

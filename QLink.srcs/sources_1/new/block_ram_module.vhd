@@ -51,22 +51,15 @@ begin
 addr_signal <= ADDR_B_I;
 DATA_B_O    <= data_ram_o;
 
---with WR_I select
---    we_signal <= "1111" when '1',
---                 "0000" when others;
-
 
 -- Write data from RAM
 data_in_process:process(CLK_I) 
 begin
   if rising_edge(CLK_I) then
---    RAM <= RAM;
     if RESET_I = '1' then 
         we_signal <= "0000";
---        RAM <= (others => (others => '0'));
     elsif WR_I = '1' and BASE_ADDR = addr_signal(7 downto 4) then
         we_signal <= "1111";
---        RAM(to_integer(unsigned(addr_signal(3 downto 0)))) <= DATA_B_I;
     else 
         we_signal <= "0000";
     end if;
@@ -80,7 +73,6 @@ begin
   if rising_edge(CLK_I) then
     data_ram_o <= data_ram_o;
     if BASE_ADDR = addr_signal(7 downto 4) then
---        data_ram_o <= RAM(to_integer(unsigned(addr_signal(3 downto 0))));
         data_ram_o <= data_block_ram_o ;
     elsif BASE_ADDR /= addr_signal(7 downto 4) then 
         data_ram_o <= (others => '0');
