@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x6443C5265C97DC8D" bd:device="xc7s25ftgb196-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x7918FA6E21276305" bd:device="xc7s25ftgb196-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="design_1" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -57,6 +57,156 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>BRAM_PORTB_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="bram" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="bram_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>MEM_SIZE</spirit:name>
+            <spirit:value>8192</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_WIDTH</spirit:name>
+            <spirit:value>32</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_ECC</spirit:name>
+            <spirit:value>NONE</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MASTER_TYPE</spirit:name>
+            <spirit:value>BRAM_CTRL</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>BRAM_PORTA_1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="bram" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="bram_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>MEM_SIZE</spirit:name>
+            <spirit:value>8192</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_WIDTH</spirit:name>
+            <spirit:value>32</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_ECC</spirit:name>
+            <spirit:value>NONE</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MASTER_TYPE</spirit:name>
+            <spirit:value>BRAM_CTRL</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>READ_WRITE_MODE</spirit:name>
+            <spirit:value>READ_WRITE</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>BRAM_PORTB_1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="bram" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="bram_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>MEM_SIZE</spirit:name>
+            <spirit:value>8192</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_WIDTH</spirit:name>
+            <spirit:value>32</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MEM_ECC</spirit:name>
+            <spirit:value>NONE</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="default"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>MASTER_TYPE</spirit:name>
+            <spirit:value>BRAM_CTRL</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>READ_WRITE_MODE</spirit:name>
+            <spirit:value>READ_WRITE</spirit:value>
+            <spirit:vendorExtensions>
+              <bd:configElementInfos>
+                <bd:configElementInfo bd:valueSource="user"/>
+              </bd:configElementInfos>
+            </spirit:vendorExtensions>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -80,14 +230,37 @@
         <spirit:instanceName>blk_mem_gen_0</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="blk_mem_gen" spirit:vendor="xilinx.com" spirit:version="8.4"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_blk_mem_gen_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Memory_Type">Single_Port_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_blk_mem_gen_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Memory_Type">True_Dual_Port_RAM</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Enable_32bit_Address">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Assume_Synchronous_Clk">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Enable_B">Use_ENB_Pin</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Register_PortA_Output_of_Memory_Primitives">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Register_PortB_Output_of_Memory_Primitives">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Use_RSTA_Pin">true</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Port_B_Clock">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Port_B_Write_Rate">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Port_B_Enable_Rate">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Use_RSTB_Pin">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Clock">100</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Write_Rate">50</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Enable_Rate">100</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="use_bram_block">BRAM_Controller</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="EN_SAFETY_CKT">false</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>blk_mem_gen_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="blk_mem_gen" spirit:vendor="xilinx.com" spirit:version="8.4"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_blk_mem_gen_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Memory_Type">True_Dual_Port_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Enable_32bit_Address">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Enable_B">Use_ENB_Pin</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Register_PortA_Output_of_Memory_Primitives">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Register_PortB_Output_of_Memory_Primitives">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Use_RSTA_Pin">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Use_RSTB_Pin">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Clock">100</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Write_Rate">50</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Port_B_Enable_Rate">100</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="use_bram_block">BRAM_Controller</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="EN_SAFETY_CKT">false</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -98,6 +271,15 @@
     <spirit:hierConnections>
       <spirit:hierConnection spirit:interfaceRef="BRAM_PORTA_0/BRAM_PORTA_0_1">
         <spirit:activeInterface spirit:busRef="BRAM_PORTA" spirit:componentRef="blk_mem_gen_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="BRAM_PORTB_0/BRAM_PORTB_0_1">
+        <spirit:activeInterface spirit:busRef="BRAM_PORTB" spirit:componentRef="blk_mem_gen_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="BRAM_PORTA_1/BRAM_PORTA_1_1">
+        <spirit:activeInterface spirit:busRef="BRAM_PORTA" spirit:componentRef="blk_mem_gen_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="BRAM_PORTB_1/BRAM_PORTB_1_1">
+        <spirit:activeInterface spirit:busRef="BRAM_PORTB" spirit:componentRef="blk_mem_gen_1"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>

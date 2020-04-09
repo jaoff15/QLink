@@ -1,0 +1,15 @@
+#!/bin/bash
+#echo "#W:0112345678";
+echo "#W:0112345678......."  > /dev/ttyUSB0
+for i in {00..10}
+do
+	echo "#R:81....................."  > /dev/ttyUSB0
+done
+
+sleep 1
+
+echo "#W:1090909090......."  > /dev/ttyUSB0
+for i in {00..10}
+do
+	echo "#R:90....................."  > /dev/ttyUSB0
+done

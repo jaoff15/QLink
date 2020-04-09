@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Mar 30 15:32:04 2020
+| Date         : Thu Apr  9 14:24:46 2020
 | Host         : JacobOffersen running 64-bit Ubuntu 19.10
 | Command      : report_timing_summary -max_paths 10 -file receiver_top_timing_summary_routed.rpt -pb receiver_top_timing_summary_routed.pb -rpx receiver_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : receiver_top
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     55.339        0.000                      0                 2113        0.118        0.000                      0                 2113        3.000        0.000                       0                   733  
+     27.390        0.000                      0                  628        0.136        0.000                      0                  628        3.000        0.000                       0                   233  
 
 
 All user specified timing constraints are met.
@@ -152,7 +152,7 @@ CLK100_I        {0.000 5.000}      10.000          100.000
 Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 CLK100_I                                                                                                                                                          3.000        0.000                       0                     1  
-  clk48              55.339        0.000                      0                 2113        0.118        0.000                      0                 2113       30.750        0.000                       0                   730  
+  clk48              27.390        0.000                      0                  628        0.136        0.000                      0                  628       30.750        0.000                       0                   230  
   clk_feedback                                                                                                                                                    8.751        0.000                       0                     2  
 
 
@@ -211,94 +211,28 @@ High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk48
   To Clock:  clk48
 
-Setup :            0  Failing Endpoints,  Worst Slack       55.339ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.118ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       27.390ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.136ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       30.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             55.339ns  (required time - arrival time)
-  Source:                 QLINK1/adr_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/nxt_enc_data_reg[3]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.390ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[27]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        7.033ns  (logic 0.952ns (13.535%)  route 6.081ns (86.465%))
-  Logic Levels:           4  (LUT6=4)
-  Clock Path Skew:        -0.111ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.706ns = ( 68.206 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.186ns
-    Clock Pessimism Removal (CPR):    0.369ns
-  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.183ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.439     1.439 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.348     2.787    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.656     4.532    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.558     6.186    QLINK1/CLK
-    SLICE_X16Y12         FDRE                                         r  QLINK1/adr_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X16Y12         FDRE (Prop_fdre_C_Q)         0.456     6.642 f  QLINK1/adr_reg[1]/Q
-                         net (fo=150, routed)         4.186    10.829    QLINK1/RAM_reg[15][31][1]
-    SLICE_X9Y12          LUT6 (Prop_lut6_I2_O)        0.124    10.953 r  QLINK1/nxt_enc_data[3]_i_23/O
-                         net (fo=1, routed)           0.596    11.548    QLINK1/nxt_enc_data[3]_i_23_n_0
-    SLICE_X10Y12         LUT6 (Prop_lut6_I1_O)        0.124    11.672 f  QLINK1/nxt_enc_data[3]_i_15/O
-                         net (fo=1, routed)           0.466    12.138    QLINK1/nxt_enc_data[3]_i_15_n_0
-    SLICE_X10Y12         LUT6 (Prop_lut6_I5_O)        0.124    12.262 r  QLINK1/nxt_enc_data[3]_i_4/O
-                         net (fo=1, routed)           0.833    13.096    QLINK1/nxt_enc_data[3]_i_4_n_0
-    SLICE_X8Y11          LUT6 (Prop_lut6_I3_O)        0.124    13.220 r  QLINK1/nxt_enc_data[3]_i_1/O
-                         net (fo=1, routed)           0.000    13.220    QLINK1/nxt_enc_data[3]
-    SLICE_X8Y11          FDRE                                         r  QLINK1/nxt_enc_data_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.439    68.206    QLINK1/CLK
-    SLICE_X8Y11          FDRE                                         r  QLINK1/nxt_enc_data_reg[3]/C
-                         clock pessimism              0.369    68.575    
-                         clock uncertainty           -0.098    68.477    
-    SLICE_X8Y11          FDRE (Setup_fdre_C_D)        0.081    68.558    QLINK1/nxt_enc_data_reg[3]
-  -------------------------------------------------------------------
-                         required time                         68.558    
-                         arrival time                         -13.220    
-  -------------------------------------------------------------------
-                         slack                                 55.339    
-
-Slack (MET) :             55.389ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[10][18]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Path Group:             clk48
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.649ns  (logic 2.454ns (67.260%)  route 1.195ns (32.740%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.064ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.707ns = ( 36.957 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -315,48 +249,49 @@ Slack (MET) :             55.389ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][18]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[27])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[27]
+                         net (fo=1, routed)           1.195     9.875    MemCpy/D[27]
+    SLICE_X8Y39          FDRE                                         r  MemCpy/DATA_B_O_reg[27]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][18]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X8Y19          FDRE (Setup_fdre_C_R)       -0.699    67.770    RAM0/RAM_reg[10][18]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.440    36.957    MemCpy/CLK
+    SLICE_X8Y39          FDRE                                         r  MemCpy/DATA_B_O_reg[27]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.412    
+                         clock uncertainty           -0.098    37.314    
+    SLICE_X8Y39          FDRE (Setup_fdre_C_D)       -0.049    37.265    MemCpy/DATA_B_O_reg[27]
   -------------------------------------------------------------------
-                         required time                         67.770    
-                         arrival time                         -12.382    
+                         required time                         37.265    
+                         arrival time                          -9.875    
   -------------------------------------------------------------------
-                         slack                                 55.389    
+                         slack                                 27.390    
 
-Slack (MET) :             55.389ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[10][19]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.428ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[29]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.603ns  (logic 2.454ns (68.108%)  route 1.149ns (31.892%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.064ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.707ns = ( 36.957 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -373,48 +308,49 @@ Slack (MET) :             55.389ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][19]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[29])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[29]
+                         net (fo=1, routed)           1.149     9.830    MemCpy/D[29]
+    SLICE_X8Y39          FDRE                                         r  MemCpy/DATA_B_O_reg[29]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][19]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X8Y19          FDRE (Setup_fdre_C_R)       -0.699    67.770    RAM0/RAM_reg[10][19]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.440    36.957    MemCpy/CLK
+    SLICE_X8Y39          FDRE                                         r  MemCpy/DATA_B_O_reg[29]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.412    
+                         clock uncertainty           -0.098    37.314    
+    SLICE_X8Y39          FDRE (Setup_fdre_C_D)       -0.056    37.258    MemCpy/DATA_B_O_reg[29]
   -------------------------------------------------------------------
-                         required time                         67.770    
-                         arrival time                         -12.382    
+                         required time                         37.258    
+                         arrival time                          -9.830    
   -------------------------------------------------------------------
-                         slack                                 55.389    
+                         slack                                 27.428    
 
-Slack (MET) :             55.389ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[10][6]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.529ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[2]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.526ns  (logic 2.454ns (69.607%)  route 1.072ns (30.393%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.699ns = ( 36.949 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -431,48 +367,49 @@ Slack (MET) :             55.389ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][6]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[2])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[2]
+                         net (fo=1, routed)           1.072     9.752    MemCpy/D[2]
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X8Y19          FDRE                                         r  RAM0/RAM_reg[10][6]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X8Y19          FDRE (Setup_fdre_C_R)       -0.699    67.770    RAM0/RAM_reg[10][6]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.432    36.949    MemCpy/CLK
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[2]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.404    
+                         clock uncertainty           -0.098    37.306    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)       -0.025    37.281    MemCpy/DATA_B_O_reg[2]
   -------------------------------------------------------------------
-                         required time                         67.770    
-                         arrival time                         -12.382    
+                         required time                         37.281    
+                         arrival time                          -9.752    
   -------------------------------------------------------------------
-                         slack                                 55.389    
+                         slack                                 27.529    
 
-Slack (MET) :             55.484ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][18]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.634ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[30]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.439ns  (logic 2.454ns (71.367%)  route 0.985ns (28.633%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.770ns = ( 37.020 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.441ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -489,48 +426,49 @@ Slack (MET) :             55.484ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][18]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[30])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[30]
+                         net (fo=1, routed)           0.985     9.665    MemCpy/D[30]
+    SLICE_X7Y33          FDRE                                         r  MemCpy/DATA_B_O_reg[30]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][18]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X9Y19          FDRE (Setup_fdre_C_R)       -0.604    67.865    RAM0/RAM_reg[8][18]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.503    37.020    MemCpy/CLK
+    SLICE_X7Y33          FDRE                                         r  MemCpy/DATA_B_O_reg[30]/C  (IS_INVERTED)
+                         clock pessimism              0.441    37.461    
+                         clock uncertainty           -0.098    37.363    
+    SLICE_X7Y33          FDRE (Setup_fdre_C_D)       -0.064    37.299    MemCpy/DATA_B_O_reg[30]
   -------------------------------------------------------------------
-                         required time                         67.865    
-                         arrival time                         -12.382    
+                         required time                         37.299    
+                         arrival time                          -9.665    
   -------------------------------------------------------------------
-                         slack                                 55.484    
+                         slack                                 27.634    
 
-Slack (MET) :             55.484ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][19]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.661ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[11]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.396ns  (logic 2.454ns (72.260%)  route 0.942ns (27.740%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.068ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.703ns = ( 36.953 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -547,48 +485,49 @@ Slack (MET) :             55.484ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][19]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[11])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[11]
+                         net (fo=1, routed)           0.942     9.623    MemCpy/D[11]
+    SLICE_X8Y34          FDRE                                         r  MemCpy/DATA_B_O_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][19]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X9Y19          FDRE (Setup_fdre_C_R)       -0.604    67.865    RAM0/RAM_reg[8][19]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.436    36.953    MemCpy/CLK
+    SLICE_X8Y34          FDRE                                         r  MemCpy/DATA_B_O_reg[11]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.408    
+                         clock uncertainty           -0.098    37.310    
+    SLICE_X8Y34          FDRE (Setup_fdre_C_D)       -0.026    37.284    MemCpy/DATA_B_O_reg[11]
   -------------------------------------------------------------------
-                         required time                         67.865    
-                         arrival time                         -12.382    
+                         required time                         37.284    
+                         arrival time                          -9.623    
   -------------------------------------------------------------------
-                         slack                                 55.484    
+                         slack                                 27.661    
 
-Slack (MET) :             55.484ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][5]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.665ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[12]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.374ns  (logic 2.454ns (72.727%)  route 0.920ns (27.273%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.699ns = ( 36.949 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -605,48 +544,49 @@ Slack (MET) :             55.484ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][5]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[12])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[12]
+                         net (fo=1, routed)           0.920     9.601    MemCpy/D[12]
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][5]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X9Y19          FDRE (Setup_fdre_C_R)       -0.604    67.865    RAM0/RAM_reg[8][5]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.432    36.949    MemCpy/CLK
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[12]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.404    
+                         clock uncertainty           -0.098    37.306    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)       -0.040    37.266    MemCpy/DATA_B_O_reg[12]
   -------------------------------------------------------------------
-                         required time                         67.865    
-                         arrival time                         -12.382    
+                         required time                         37.266    
+                         arrival time                          -9.601    
   -------------------------------------------------------------------
-                         slack                                 55.484    
+                         slack                                 27.665    
 
-Slack (MET) :             55.484ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][6]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.666ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[10]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.375ns  (logic 2.454ns (72.705%)  route 0.921ns (27.295%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.699ns = ( 36.949 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -663,48 +603,49 @@ Slack (MET) :             55.484ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][6]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[10])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[10]
+                         net (fo=1, routed)           0.921     9.602    MemCpy/D[10]
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][6]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X9Y19          FDRE (Setup_fdre_C_R)       -0.604    67.865    RAM0/RAM_reg[8][6]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.432    36.949    MemCpy/CLK
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[10]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.404    
+                         clock uncertainty           -0.098    37.306    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)       -0.038    37.268    MemCpy/DATA_B_O_reg[10]
   -------------------------------------------------------------------
-                         required time                         67.865    
-                         arrival time                         -12.382    
+                         required time                         37.268    
+                         arrival time                          -9.602    
   -------------------------------------------------------------------
-                         slack                                 55.484    
+                         slack                                 27.666    
 
-Slack (MET) :             55.484ns  (required time - arrival time)
-  Source:                 QLINK1/sys_reset_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][7]/R
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.708ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[13]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.187ns  (logic 0.419ns (6.772%)  route 5.768ns (93.228%))
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.335ns  (logic 2.454ns (73.573%)  route 0.881ns (26.428%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.127ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.698ns = ( 68.198 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.194ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Clock Path Skew:        -0.068ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.703ns = ( 36.953 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -721,48 +662,49 @@ Slack (MET) :             55.484ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.566     6.194    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.419     6.613 r  QLINK1/sys_reset_reg/Q
-                         net (fo=673, routed)         5.768    12.382    RAM0/SR[0]
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][7]/R
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[13])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[13]
+                         net (fo=1, routed)           0.881     9.562    MemCpy/D[13]
+    SLICE_X8Y34          FDRE                                         r  MemCpy/DATA_B_O_reg[13]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.431    68.198    RAM0/CLK
-    SLICE_X9Y19          FDRE                                         r  RAM0/RAM_reg[8][7]/C
-                         clock pessimism              0.369    68.567    
-                         clock uncertainty           -0.098    68.469    
-    SLICE_X9Y19          FDRE (Setup_fdre_C_R)       -0.604    67.865    RAM0/RAM_reg[8][7]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.436    36.953    MemCpy/CLK
+    SLICE_X8Y34          FDRE                                         r  MemCpy/DATA_B_O_reg[13]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.408    
+                         clock uncertainty           -0.098    37.310    
+    SLICE_X8Y34          FDRE (Setup_fdre_C_D)       -0.040    37.270    MemCpy/DATA_B_O_reg[13]
   -------------------------------------------------------------------
-                         required time                         67.865    
-                         arrival time                         -12.382    
+                         required time                         37.270    
+                         arrival time                          -9.562    
   -------------------------------------------------------------------
-                         slack                                 55.484    
+                         slack                                 27.708    
 
-Slack (MET) :             55.597ns  (required time - arrival time)
-  Source:                 QLINK1/DECODE/nxt_data_reg[6]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/data32_reg[12]/CE
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+Slack (MET) :             27.710ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[8]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            62.500ns  (clk48 rise@62.500ns - clk48 rise@0.000ns)
-  Data Path Delay:        6.280ns  (logic 0.974ns (15.509%)  route 5.306ns (84.491%))
-  Logic Levels:           4  (LUT3=1 LUT4=1 LUT6=2)
-  Clock Path Skew:        -0.116ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.703ns = ( 68.203 - 62.500 ) 
-    Source Clock Delay      (SCD):    6.188ns
-    Clock Pessimism Removal (CPR):    0.369ns
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.347ns  (logic 2.454ns (73.324%)  route 0.893ns (26.676%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.070ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.701ns = ( 36.951 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
   Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.183ns
@@ -779,41 +721,93 @@ Slack (MET) :             55.597ns  (required time - arrival time)
                                                       0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           1.656     4.532    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.560     6.188    QLINK1/DECODE/CLK
-    SLICE_X13Y7          FDRE                                         r  QLINK1/DECODE/nxt_data_reg[6]/C
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y7          FDRE (Prop_fdre_C_Q)         0.456     6.644 r  QLINK1/DECODE/nxt_data_reg[6]/Q
-                         net (fo=17, routed)          2.313     8.957    QLINK1/DECODE/dec_data[6]
-    SLICE_X16Y10         LUT4 (Prop_lut4_I1_O)        0.124     9.081 r  QLINK1/DECODE/FSM_onehot_rx_state[0]_i_6/O
-                         net (fo=2, routed)           0.509     9.589    QLINK1/DECODE/FSM_onehot_rx_state[0]_i_6_n_0
-    SLICE_X17Y10         LUT6 (Prop_lut6_I4_O)        0.124     9.713 r  QLINK1/DECODE/FSM_onehot_rx_state[17]_i_3/O
-                         net (fo=1, routed)           0.659    10.372    QLINK1/DECODE/FSM_onehot_rx_state[17]_i_3_n_0
-    SLICE_X16Y10         LUT6 (Prop_lut6_I1_O)        0.124    10.496 f  QLINK1/DECODE/FSM_onehot_rx_state[17]_i_2/O
-                         net (fo=23, routed)          1.190    11.685    QLINK1/DECODE/FSM_onehot_rx_state[17]_i_2_n_0
-    SLICE_X14Y15         LUT3 (Prop_lut3_I1_O)        0.146    11.831 r  QLINK1/DECODE/data32[15]_i_1/O
-                         net (fo=4, routed)           0.637    12.468    QLINK1/DECODE_n_62
-    SLICE_X16Y16         FDRE                                         r  QLINK1/data32_reg[12]/CE
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[8])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[8]
+                         net (fo=1, routed)           0.893     9.573    MemCpy/D[8]
+    SLICE_X8Y32          FDRE                                         r  MemCpy/DATA_B_O_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk48 rise edge)     62.500    62.500 r  
-    L5                                                0.000    62.500 r  CLK100_I (IN)
-                         net (fo=0)                   0.000    62.500    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         1.369    63.869 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           1.145    65.014    QLINK1/MMCM48_INST/CLK100_I_IBUF
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.083    65.097 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           1.578    66.675    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    66.766 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         1.436    68.203    QLINK1/CLK
-    SLICE_X16Y16         FDRE                                         r  QLINK1/data32_reg[12]/C
-                         clock pessimism              0.369    68.572    
-                         clock uncertainty           -0.098    68.474    
-    SLICE_X16Y16         FDRE (Setup_fdre_C_CE)      -0.409    68.065    QLINK1/data32_reg[12]
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.434    36.951    MemCpy/CLK
+    SLICE_X8Y32          FDRE                                         r  MemCpy/DATA_B_O_reg[8]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.406    
+                         clock uncertainty           -0.098    37.308    
+    SLICE_X8Y32          FDRE (Setup_fdre_C_D)       -0.025    37.283    MemCpy/DATA_B_O_reg[8]
   -------------------------------------------------------------------
-                         required time                         68.065    
-                         arrival time                         -12.468    
+                         required time                         37.283    
+                         arrival time                          -9.573    
   -------------------------------------------------------------------
-                         slack                                 55.597    
+                         slack                                 27.710    
+
+Slack (MET) :             27.732ns  (required time - arrival time)
+  Source:                 RAM0/UNISIM_RAM0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            MemCpy/DATA_B_O_reg[22]/D
+                            (falling edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Path Group:             clk48
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            31.250ns  (clk48 fall@31.250ns - clk48 rise@0.000ns)
+  Data Path Delay:        3.336ns  (logic 2.454ns (73.550%)  route 0.882ns (26.450%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.072ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.699ns = ( 36.949 - 31.250 ) 
+    Source Clock Delay      (SCD):    6.227ns
+    Clock Pessimism Removal (CPR):    0.455ns
+  Clock Uncertainty:      0.098ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.183ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.439     1.439 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.348     2.787    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.088     2.875 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.656     4.532    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     4.628 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.599     6.227    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y7          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[22])
+                                                      2.454     8.681 r  RAM0/UNISIM_RAM0/DOBDO[22]
+                         net (fo=1, routed)           0.882     9.563    MemCpy/D[22]
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk48 fall edge)     31.250    31.250 f  
+    L5                                                0.000    31.250 f  CLK100_I (IN)
+                         net (fo=0)                   0.000    31.250    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         1.369    32.619 f  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           1.145    33.764    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.083    33.847 f  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           1.578    35.425    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    35.516 f  clk48_BUFG_inst/O
+                         net (fo=228, routed)         1.432    36.949    MemCpy/CLK
+    SLICE_X8Y31          FDRE                                         r  MemCpy/DATA_B_O_reg[22]/C  (IS_INVERTED)
+                         clock pessimism              0.455    37.404    
+                         clock uncertainty           -0.098    37.306    
+    SLICE_X8Y31          FDRE (Setup_fdre_C_D)       -0.011    37.295    MemCpy/DATA_B_O_reg[22]
+  -------------------------------------------------------------------
+                         required time                         37.295    
+                         arrival time                          -9.563    
+  -------------------------------------------------------------------
+                         slack                                 27.732    
 
 
 
@@ -821,20 +815,20 @@ Slack (MET) :             55.597ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.118ns  (arrival time - required time)
-  Source:                 QLINK1/FSM_onehot_rx_state_reg[13]/C
+Slack (MET) :             0.136ns  (arrival time - required time)
+  Source:                 QLINK1/data32_reg[23]/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/FSM_onehot_rx_state_reg[0]/D
-                            (rising edge-triggered cell FDSE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[23]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.252ns  (logic 0.186ns (73.721%)  route 0.066ns (26.279%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.443ns
-    Source Clock Delay      (SCD):    1.839ns
-    Clock Pessimism Removal (CPR):    0.591ns
+  Data Path Delay:        0.485ns  (logic 0.141ns (29.091%)  route 0.344ns (70.909%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.052ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.865ns
+    Clock Pessimism Removal (CPR):    0.570ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -847,14 +841,12 @@ Slack (MET) :             0.118ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.560     1.839    QLINK1/CLK
-    SLICE_X15Y12         FDRE                                         r  QLINK1/FSM_onehot_rx_state_reg[13]/C
+                         net (fo=228, routed)         0.586     1.865    QLINK1/CLK
+    SLICE_X7Y35          FDRE                                         r  QLINK1/data32_reg[23]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X15Y12         FDRE (Prop_fdre_C_Q)         0.141     1.980 r  QLINK1/FSM_onehot_rx_state_reg[13]/Q
-                         net (fo=5, routed)           0.066     2.046    QLINK1/DECODE/out[13]
-    SLICE_X14Y12         LUT6 (Prop_lut6_I3_O)        0.045     2.091 r  QLINK1/DECODE/FSM_onehot_rx_state[0]_i_1/O
-                         net (fo=1, routed)           0.000     2.091    QLINK1/DECODE_n_17
-    SLICE_X14Y12         FDSE                                         r  QLINK1/FSM_onehot_rx_state_reg[0]/D
+    SLICE_X7Y35          FDRE (Prop_fdre_C_Q)         0.141     2.006 r  QLINK1/data32_reg[23]/Q
+                         net (fo=6, routed)           0.344     2.350    RAM0/data32_reg[31]_0[23]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[23]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -866,17 +858,18 @@ Slack (MET) :             0.118ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.828     2.443    QLINK1/CLK
-    SLICE_X14Y12         FDSE                                         r  QLINK1/FSM_onehot_rx_state_reg[0]/C
-                         clock pessimism             -0.591     1.852    
-    SLICE_X14Y12         FDSE (Hold_fdse_C_D)         0.121     1.973    QLINK1/FSM_onehot_rx_state_reg[0]
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.570     1.918    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[23])
+                                                      0.296     2.214    RAM0/UNISIM_RAM0
   -------------------------------------------------------------------
-                         required time                         -1.973    
-                         arrival time                           2.091    
+                         required time                         -2.214    
+                         arrival time                           2.350    
   -------------------------------------------------------------------
-                         slack                                  0.118    
+                         slack                                  0.136    
 
-Slack (MET) :             0.131ns  (arrival time - required time)
+Slack (MET) :             0.143ns  (arrival time - required time)
   Source:                 QLINK1/buf_reset_reg/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Destination:            QLINK1/sys_reset_reg/D
@@ -884,12 +877,12 @@ Slack (MET) :             0.131ns  (arrival time - required time)
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.206ns  (logic 0.141ns (68.336%)  route 0.065ns (31.664%))
+  Data Path Delay:        0.218ns  (logic 0.141ns (64.541%)  route 0.077ns (35.459%))
   Logic Levels:           0  
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.449ns
-    Source Clock Delay      (SCD):    1.843ns
-    Clock Pessimism Removal (CPR):    0.606ns
+    Destination Clock Delay (DCD):    2.470ns
+    Source Clock Delay      (SCD):    1.865ns
+    Clock Pessimism Removal (CPR):    0.605ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -902,67 +895,12 @@ Slack (MET) :             0.131ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.564     1.843    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/buf_reset_reg/C
+                         net (fo=228, routed)         0.586     1.865    QLINK1/CLK
+    SLICE_X4Y35          FDRE                                         r  QLINK1/buf_reset_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X24Y6          FDRE (Prop_fdre_C_Q)         0.141     1.984 r  QLINK1/buf_reset_reg/Q
-                         net (fo=1, routed)           0.065     2.049    QLINK1/buf_reset
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.528     1.587    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.834     2.449    QLINK1/CLK
-    SLICE_X24Y6          FDRE                                         r  QLINK1/sys_reset_reg/C
-                         clock pessimism             -0.606     1.843    
-    SLICE_X24Y6          FDRE (Hold_fdre_C_D)         0.075     1.918    QLINK1/sys_reset_reg
-  -------------------------------------------------------------------
-                         required time                         -1.918    
-                         arrival time                           2.049    
-  -------------------------------------------------------------------
-                         slack                                  0.131    
-
-Slack (MET) :             0.142ns  (arrival time - required time)
-  Source:                 QLINK1/led_idx_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/LED_O_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Path Group:             clk48
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.275ns  (logic 0.186ns (67.585%)  route 0.089ns (32.415%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.463ns
-    Source Clock Delay      (SCD):    1.859ns
-    Clock Pessimism Removal (CPR):    0.591ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.485     1.253    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.580     1.859    QLINK1/CLK
-    SLICE_X7Y21          FDRE                                         r  QLINK1/led_idx_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X7Y21          FDRE (Prop_fdre_C_Q)         0.141     2.000 f  QLINK1/led_idx_reg[0]/Q
-                         net (fo=7, routed)           0.089     2.089    QLINK1/led_idx_reg__0[0]
-    SLICE_X6Y21          LUT6 (Prop_lut6_I1_O)        0.045     2.134 r  QLINK1/LED_O_i_1/O
-                         net (fo=1, routed)           0.000     2.134    QLINK1/LED_O_i_1_n_0
-    SLICE_X6Y21          FDRE                                         r  QLINK1/LED_O_reg/D
+    SLICE_X4Y35          FDRE (Prop_fdre_C_Q)         0.141     2.006 r  QLINK1/buf_reset_reg/Q
+                         net (fo=2, routed)           0.077     2.084    QLINK1/buf_reset
+    SLICE_X4Y35          FDRE                                         r  QLINK1/sys_reset_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -974,85 +912,30 @@ Slack (MET) :             0.142ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.848     2.463    QLINK1/CLK
-    SLICE_X6Y21          FDRE                                         r  QLINK1/LED_O_reg/C
-                         clock pessimism             -0.591     1.872    
-    SLICE_X6Y21          FDRE (Hold_fdre_C_D)         0.120     1.992    QLINK1/LED_O_reg
+                         net (fo=228, routed)         0.855     2.470    QLINK1/CLK
+    SLICE_X4Y35          FDRE                                         r  QLINK1/sys_reset_reg/C
+                         clock pessimism             -0.605     1.865    
+    SLICE_X4Y35          FDRE (Hold_fdre_C_D)         0.075     1.940    QLINK1/sys_reset_reg
   -------------------------------------------------------------------
-                         required time                         -1.992    
-                         arrival time                           2.134    
+                         required time                         -1.940    
+                         arrival time                           2.084    
   -------------------------------------------------------------------
-                         slack                                  0.142    
+                         slack                                  0.143    
 
-Slack (MET) :             0.156ns  (arrival time - required time)
-  Source:                 RAM0/data_ram_o_reg[20]/C
+Slack (MET) :             0.146ns  (arrival time - required time)
+  Source:                 QLINK1/data32_reg[12]/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/data32_reg[20]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[12]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.514ns  (logic 0.186ns (36.170%)  route 0.328ns (63.830%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.442ns
-    Source Clock Delay      (SCD):    1.835ns
-    Clock Pessimism Removal (CPR):    0.341ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.485     1.253    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.556     1.835    RAM0/CLK
-    SLICE_X16Y14         FDRE                                         r  RAM0/data_ram_o_reg[20]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X16Y14         FDRE (Prop_fdre_C_Q)         0.141     1.976 r  RAM0/data_ram_o_reg[20]/Q
-                         net (fo=1, routed)           0.328     2.304    QLINK1/DECODE/Q[20]
-    SLICE_X15Y13         LUT5 (Prop_lut5_I3_O)        0.045     2.349 r  QLINK1/DECODE/data32[20]_i_1/O
-                         net (fo=1, routed)           0.000     2.349    QLINK1/DECODE_n_29
-    SLICE_X15Y13         FDRE                                         r  QLINK1/data32_reg[20]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.528     1.587    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.827     2.442    QLINK1/CLK
-    SLICE_X15Y13         FDRE                                         r  QLINK1/data32_reg[20]/C
-                         clock pessimism             -0.341     2.101    
-    SLICE_X15Y13         FDRE (Hold_fdre_C_D)         0.092     2.193    QLINK1/data32_reg[20]
-  -------------------------------------------------------------------
-                         required time                         -2.193    
-                         arrival time                           2.349    
-  -------------------------------------------------------------------
-                         slack                                  0.156    
-
-Slack (MET) :             0.166ns  (arrival time - required time)
-  Source:                 QLINK1/data32_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[8][3]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Path Group:             clk48
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.252ns  (logic 0.141ns (55.869%)  route 0.111ns (44.131%))
+  Data Path Delay:        0.493ns  (logic 0.164ns (33.271%)  route 0.329ns (66.729%))
   Logic Levels:           0  
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.440ns
-    Source Clock Delay      (SCD):    1.834ns
-    Clock Pessimism Removal (CPR):    0.591ns
+  Clock Path Skew:        0.050ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.570ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1065,12 +948,12 @@ Slack (MET) :             0.166ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.555     1.834    QLINK1/CLK
-    SLICE_X17Y16         FDRE                                         r  QLINK1/data32_reg[3]/C
+                         net (fo=228, routed)         0.588     1.867    QLINK1/CLK
+    SLICE_X6Y38          FDRE                                         r  QLINK1/data32_reg[12]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X17Y16         FDRE (Prop_fdre_C_Q)         0.141     1.975 r  QLINK1/data32_reg[3]/Q
-                         net (fo=22, routed)          0.111     2.086    RAM0/D[3]
-    SLICE_X19Y15         FDRE                                         r  RAM0/RAM_reg[8][3]/D
+    SLICE_X6Y38          FDRE (Prop_fdre_C_Q)         0.164     2.031 r  QLINK1/data32_reg[12]/Q
+                         net (fo=4, routed)           0.329     2.360    RAM0/data32_reg[31]_0[12]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[12]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -1082,30 +965,138 @@ Slack (MET) :             0.166ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.825     2.440    RAM0/CLK
-    SLICE_X19Y15         FDRE                                         r  RAM0/RAM_reg[8][3]/C
-                         clock pessimism             -0.591     1.849    
-    SLICE_X19Y15         FDRE (Hold_fdre_C_D)         0.071     1.920    RAM0/RAM_reg[8][3]
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.570     1.918    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[12])
+                                                      0.296     2.214    RAM0/UNISIM_RAM0
   -------------------------------------------------------------------
-                         required time                         -1.920    
-                         arrival time                           2.086    
+                         required time                         -2.214    
+                         arrival time                           2.360    
   -------------------------------------------------------------------
-                         slack                                  0.166    
+                         slack                                  0.146    
+
+Slack (MET) :             0.153ns  (arrival time - required time)
+  Source:                 QLINK1/clk_cnt_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            QLINK1/timestamp_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Path Group:             clk48
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
+  Data Path Delay:        0.251ns  (logic 0.141ns (56.085%)  route 0.110ns (43.915%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.441ns
+    Source Clock Delay      (SCD):    1.838ns
+    Clock Pessimism Removal (CPR):    0.590ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.485     1.253    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.559     1.838    QLINK1/CLK
+    SLICE_X11Y34         FDRE                                         r  QLINK1/clk_cnt_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X11Y34         FDRE (Prop_fdre_C_Q)         0.141     1.979 r  QLINK1/clk_cnt_reg[0]/Q
+                         net (fo=3, routed)           0.110     2.089    QLINK1/clk_cnt_reg[0]
+    SLICE_X10Y34         FDRE                                         r  QLINK1/timestamp_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.528     1.587    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.826     2.441    QLINK1/CLK
+    SLICE_X10Y34         FDRE                                         r  QLINK1/timestamp_reg[0]/C
+                         clock pessimism             -0.590     1.851    
+    SLICE_X10Y34         FDRE (Hold_fdre_C_D)         0.085     1.936    QLINK1/timestamp_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.936    
+                         arrival time                           2.089    
+  -------------------------------------------------------------------
+                         slack                                  0.153    
+
+Slack (MET) :             0.161ns  (arrival time - required time)
+  Source:                 QLINK1/data32_reg[30]/C
+                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[30]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Path Group:             clk48
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
+  Data Path Delay:        0.507ns  (logic 0.141ns (27.786%)  route 0.366ns (72.214%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.050ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.570ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.485     1.253    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.588     1.867    QLINK1/CLK
+    SLICE_X7Y39          FDRE                                         r  QLINK1/data32_reg[30]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y39          FDRE (Prop_fdre_C_Q)         0.141     2.008 r  QLINK1/data32_reg[30]/Q
+                         net (fo=5, routed)           0.366     2.375    RAM0/data32_reg[31]_0[30]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[30]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.528     1.587    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.570     1.918    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[30])
+                                                      0.296     2.214    RAM0/UNISIM_RAM0
+  -------------------------------------------------------------------
+                         required time                         -2.214    
+                         arrival time                           2.375    
+  -------------------------------------------------------------------
+                         slack                                  0.161    
 
 Slack (MET) :             0.172ns  (arrival time - required time)
-  Source:                 QLINK1/DECODE/nxt_data_reg[0]/C
+  Source:                 QLINK1/FSM_onehot_rx_state_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/timestamp_enable_reg/D
+  Destination:            QLINK1/FSM_onehot_rx_state_reg[18]/D
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.308ns  (logic 0.186ns (60.394%)  route 0.122ns (39.606%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.446ns
-    Source Clock Delay      (SCD):    1.841ns
-    Clock Pessimism Removal (CPR):    0.589ns
+  Data Path Delay:        0.232ns  (logic 0.164ns (70.680%)  route 0.068ns (29.320%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.475ns
+    Source Clock Delay      (SCD):    1.868ns
+    Clock Pessimism Removal (CPR):    0.607ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1118,14 +1109,12 @@ Slack (MET) :             0.172ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.562     1.841    QLINK1/DECODE/CLK
-    SLICE_X13Y9          FDRE                                         r  QLINK1/DECODE/nxt_data_reg[0]/C
+                         net (fo=228, routed)         0.589     1.868    QLINK1/CLK
+    SLICE_X2Y38          FDRE                                         r  QLINK1/FSM_onehot_rx_state_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y9          FDRE (Prop_fdre_C_Q)         0.141     1.982 r  QLINK1/DECODE/nxt_data_reg[0]/Q
-                         net (fo=17, routed)          0.122     2.104    QLINK1/DECODE/dec_data[0]
-    SLICE_X14Y9          LUT6 (Prop_lut6_I4_O)        0.045     2.149 r  QLINK1/DECODE/timestamp_enable_i_1/O
-                         net (fo=1, routed)           0.000     2.149    QLINK1/DECODE_n_69
-    SLICE_X14Y9          FDRE                                         r  QLINK1/timestamp_enable_reg/D
+    SLICE_X2Y38          FDRE (Prop_fdre_C_Q)         0.164     2.032 r  QLINK1/FSM_onehot_rx_state_reg[17]/Q
+                         net (fo=4, routed)           0.068     2.100    QLINK1/nxt_rd
+    SLICE_X2Y38          FDRE                                         r  QLINK1/FSM_onehot_rx_state_reg[18]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -1137,144 +1126,30 @@ Slack (MET) :             0.172ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.831     2.446    QLINK1/CLK
-    SLICE_X14Y9          FDRE                                         r  QLINK1/timestamp_enable_reg/C
-                         clock pessimism             -0.589     1.857    
-    SLICE_X14Y9          FDRE (Hold_fdre_C_D)         0.120     1.977    QLINK1/timestamp_enable_reg
+                         net (fo=228, routed)         0.860     2.475    QLINK1/CLK
+    SLICE_X2Y38          FDRE                                         r  QLINK1/FSM_onehot_rx_state_reg[18]/C
+                         clock pessimism             -0.607     1.868    
+    SLICE_X2Y38          FDRE (Hold_fdre_C_D)         0.060     1.928    QLINK1/FSM_onehot_rx_state_reg[18]
   -------------------------------------------------------------------
-                         required time                         -1.977    
-                         arrival time                           2.149    
+                         required time                         -1.928    
+                         arrival time                           2.100    
   -------------------------------------------------------------------
                          slack                                  0.172    
 
-Slack (MET) :             0.174ns  (arrival time - required time)
-  Source:                 RAM0/RAM_reg[10][31]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/data_ram_o_reg[31]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Path Group:             clk48
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.321ns  (logic 0.267ns (83.151%)  route 0.054ns (16.849%))
-  Logic Levels:           3  (LUT6=1 MUXF7=1 MUXF8=1)
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.442ns
-    Source Clock Delay      (SCD):    1.837ns
-    Clock Pessimism Removal (CPR):    0.592ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.485     1.253    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.558     1.837    RAM0/CLK
-    SLICE_X23Y13         FDRE                                         r  RAM0/RAM_reg[10][31]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X23Y13         FDRE (Prop_fdre_C_Q)         0.141     1.978 r  RAM0/RAM_reg[10][31]/Q
-                         net (fo=1, routed)           0.054     2.032    RAM0/RAM_reg[10][31]
-    SLICE_X22Y13         LUT6 (Prop_lut6_I1_O)        0.045     2.077 r  RAM0/data_ram_o[31]_i_8/O
-                         net (fo=1, routed)           0.000     2.077    RAM0/data_ram_o[31]_i_8_n_0
-    SLICE_X22Y13         MUXF7 (Prop_muxf7_I0_O)      0.062     2.139 r  RAM0/data_ram_o_reg[31]_i_5/O
-                         net (fo=1, routed)           0.000     2.139    RAM0/data_ram_o_reg[31]_i_5_n_0
-    SLICE_X22Y13         MUXF8 (Prop_muxf8_I1_O)      0.019     2.158 r  RAM0/data_ram_o_reg[31]_i_3/O
-                         net (fo=1, routed)           0.000     2.158    RAM0/RAM[0]_0[31]
-    SLICE_X22Y13         FDRE                                         r  RAM0/data_ram_o_reg[31]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.528     1.587    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.827     2.442    RAM0/CLK
-    SLICE_X22Y13         FDRE                                         r  RAM0/data_ram_o_reg[31]/C
-                         clock pessimism             -0.592     1.850    
-    SLICE_X22Y13         FDRE (Hold_fdre_C_D)         0.134     1.984    RAM0/data_ram_o_reg[31]
-  -------------------------------------------------------------------
-                         required time                         -1.984    
-                         arrival time                           2.158    
-  -------------------------------------------------------------------
-                         slack                                  0.174    
-
-Slack (MET) :             0.174ns  (arrival time - required time)
-  Source:                 RAM0/data_ram_o_reg[30]/C
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/data32_reg[30]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Path Group:             clk48
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.311ns  (logic 0.186ns (59.774%)  route 0.125ns (40.226%))
-  Logic Levels:           1  (LUT6=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.442ns
-    Source Clock Delay      (SCD):    1.835ns
-    Clock Pessimism Removal (CPR):    0.591ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.485     1.253    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.556     1.835    RAM0/CLK
-    SLICE_X17Y13         FDRE                                         r  RAM0/data_ram_o_reg[30]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X17Y13         FDRE (Prop_fdre_C_Q)         0.141     1.976 r  RAM0/data_ram_o_reg[30]/Q
-                         net (fo=1, routed)           0.125     2.101    QLINK1/DECODE/Q[30]
-    SLICE_X18Y12         LUT6 (Prop_lut6_I4_O)        0.045     2.146 r  QLINK1/DECODE/data32[30]_i_1/O
-                         net (fo=1, routed)           0.000     2.146    QLINK1/DECODE_n_19
-    SLICE_X18Y12         FDRE                                         r  QLINK1/data32_reg[30]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk48 rise edge)      0.000     0.000 r  
-    L5                                                0.000     0.000 r  CLK100_I (IN)
-                         net (fo=0)                   0.000     0.000    CLK100_I
-    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
-                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-                         net (fo=1, routed)           0.528     1.587    clk48
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.827     2.442    QLINK1/CLK
-    SLICE_X18Y12         FDRE                                         r  QLINK1/data32_reg[30]/C
-                         clock pessimism             -0.591     1.851    
-    SLICE_X18Y12         FDRE (Hold_fdre_C_D)         0.121     1.972    QLINK1/data32_reg[30]
-  -------------------------------------------------------------------
-                         required time                         -1.972    
-                         arrival time                           2.146    
-  -------------------------------------------------------------------
-                         slack                                  0.174    
-
 Slack (MET) :             0.177ns  (arrival time - required time)
-  Source:                 RAM0/data_ram_o_reg[1]/C
+  Source:                 QLINK1/data32_reg[14]/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            QLINK1/data32_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[14]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.282ns  (logic 0.186ns (65.917%)  route 0.096ns (34.083%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.439ns
-    Source Clock Delay      (SCD):    1.834ns
-    Clock Pessimism Removal (CPR):    0.591ns
+  Data Path Delay:        0.524ns  (logic 0.164ns (31.317%)  route 0.360ns (68.683%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.050ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.570ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1287,14 +1162,12 @@ Slack (MET) :             0.177ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.555     1.834    RAM0/CLK
-    SLICE_X19Y16         FDRE                                         r  RAM0/data_ram_o_reg[1]/C
+                         net (fo=228, routed)         0.588     1.867    QLINK1/CLK
+    SLICE_X6Y38          FDRE                                         r  QLINK1/data32_reg[14]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X19Y16         FDRE (Prop_fdre_C_Q)         0.141     1.975 r  RAM0/data_ram_o_reg[1]/Q
-                         net (fo=1, routed)           0.096     2.071    QLINK1/DECODE/Q[1]
-    SLICE_X17Y16         LUT5 (Prop_lut5_I3_O)        0.045     2.116 r  QLINK1/DECODE/data32[1]_i_1/O
-                         net (fo=1, routed)           0.000     2.116    QLINK1/DECODE_n_48
-    SLICE_X17Y16         FDRE                                         r  QLINK1/data32_reg[1]/D
+    SLICE_X6Y38          FDRE (Prop_fdre_C_Q)         0.164     2.031 r  QLINK1/data32_reg[14]/Q
+                         net (fo=5, routed)           0.360     2.391    RAM0/data32_reg[31]_0[14]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[14]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -1306,29 +1179,30 @@ Slack (MET) :             0.177ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.824     2.439    QLINK1/CLK
-    SLICE_X17Y16         FDRE                                         r  QLINK1/data32_reg[1]/C
-                         clock pessimism             -0.591     1.848    
-    SLICE_X17Y16         FDRE (Hold_fdre_C_D)         0.091     1.939    QLINK1/data32_reg[1]
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.570     1.918    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[14])
+                                                      0.296     2.214    RAM0/UNISIM_RAM0
   -------------------------------------------------------------------
-                         required time                         -1.939    
-                         arrival time                           2.116    
+                         required time                         -2.214    
+                         arrival time                           2.391    
   -------------------------------------------------------------------
                          slack                                  0.177    
 
-Slack (MET) :             0.188ns  (arrival time - required time)
-  Source:                 QLINK1/data32_reg[26]/C
+Slack (MET) :             0.194ns  (arrival time - required time)
+  Source:                 MemCpy/addr_counter_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
-  Destination:            RAM0/RAM_reg[7][26]/D
-                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/ADDRBWRADDR[6]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
   Path Group:             clk48
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
-  Data Path Delay:        0.273ns  (logic 0.141ns (51.684%)  route 0.132ns (48.316%))
+  Data Path Delay:        0.437ns  (logic 0.141ns (32.245%)  route 0.296ns (67.755%))
   Logic Levels:           0  
-  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.442ns
-    Source Clock Delay      (SCD):    1.838ns
+  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.485ns
+    Source Clock Delay      (SCD):    1.835ns
     Clock Pessimism Removal (CPR):    0.589ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1342,12 +1216,12 @@ Slack (MET) :             0.188ns  (arrival time - required time)
                                                       0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.485     1.253    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.559     1.838    QLINK1/CLK
-    SLICE_X15Y15         FDRE                                         r  QLINK1/data32_reg[26]/C
+                         net (fo=228, routed)         0.556     1.835    MemCpy/CLK
+    SLICE_X9Y31          FDRE                                         r  MemCpy/addr_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X15Y15         FDRE (Prop_fdre_C_Q)         0.141     1.979 r  QLINK1/data32_reg[26]/Q
-                         net (fo=21, routed)          0.132     2.111    RAM0/D[26]
-    SLICE_X15Y14         FDRE                                         r  RAM0/RAM_reg[7][26]/D
+    SLICE_X9Y31          FDRE (Prop_fdre_C_Q)         0.141     1.976 r  MemCpy/addr_counter_reg[1]/Q
+                         net (fo=13, routed)          0.296     2.272    RAM0/addr_counter_reg[6][1]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/ADDRBWRADDR[6]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk48 rise edge)      0.000     0.000 r  
@@ -1359,15 +1233,124 @@ Slack (MET) :             0.188ns  (arrival time - required time)
                                                       0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
                          net (fo=1, routed)           0.528     1.587    clk48
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
-                         net (fo=728, routed)         0.827     2.442    RAM0/CLK
-    SLICE_X15Y14         FDRE                                         r  RAM0/RAM_reg[7][26]/C
-                         clock pessimism             -0.589     1.853    
-    SLICE_X15Y14         FDRE (Hold_fdre_C_D)         0.070     1.923    RAM0/RAM_reg[7][26]
+                         net (fo=228, routed)         0.869     2.485    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKBWRCLK
+                         clock pessimism             -0.589     1.896    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKBWRCLK_ADDRBWRADDR[6])
+                                                      0.183     2.079    RAM0/UNISIM_RAM0
   -------------------------------------------------------------------
-                         required time                         -1.923    
-                         arrival time                           2.111    
+                         required time                         -2.079    
+                         arrival time                           2.272    
   -------------------------------------------------------------------
-                         slack                                  0.188    
+                         slack                                  0.194    
+
+Slack (MET) :             0.196ns  (arrival time - required time)
+  Source:                 QLINK1/data32_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[1]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Path Group:             clk48
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
+  Data Path Delay:        0.542ns  (logic 0.141ns (25.997%)  route 0.401ns (74.003%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.050ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.570ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.485     1.253    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.588     1.867    QLINK1/CLK
+    SLICE_X5Y38          FDRE                                         r  QLINK1/data32_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y38          FDRE (Prop_fdre_C_Q)         0.141     2.008 r  QLINK1/data32_reg[1]/Q
+                         net (fo=5, routed)           0.401     2.409    RAM0/data32_reg[31]_0[1]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[1]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.528     1.587    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.570     1.918    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[1])
+                                                      0.296     2.214    RAM0/UNISIM_RAM0
+  -------------------------------------------------------------------
+                         required time                         -2.214    
+                         arrival time                           2.409    
+  -------------------------------------------------------------------
+                         slack                                  0.196    
+
+Slack (MET) :             0.198ns  (arrival time - required time)
+  Source:                 QLINK1/data32_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Destination:            RAM0/UNISIM_RAM0/DIADI[4]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk48  {rise@0.000ns fall@31.250ns period=62.500ns})
+  Path Group:             clk48
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk48 rise@0.000ns - clk48 rise@0.000ns)
+  Data Path Delay:        0.554ns  (logic 0.164ns (29.608%)  route 0.390ns (70.392%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.059ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.488ns
+    Source Clock Delay      (SCD):    1.839ns
+    Clock Pessimism Removal (CPR):    0.589ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.207     0.207 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.511     0.719    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.050     0.769 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.485     1.253    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.279 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.560     1.839    QLINK1/CLK
+    SLICE_X8Y37          FDRE                                         r  QLINK1/data32_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y37          FDRE (Prop_fdre_C_Q)         0.164     2.003 r  QLINK1/data32_reg[4]/Q
+                         net (fo=4, routed)           0.390     2.393    RAM0/data32_reg[31]_0[4]
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/DIADI[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk48 rise edge)      0.000     0.000 r  
+    L5                                                0.000     0.000 r  CLK100_I (IN)
+                         net (fo=0)                   0.000     0.000    CLK100_I
+    L5                   IBUF (Prop_ibuf_I_O)         0.395     0.395 r  CLK100_I_IBUF_inst/O
+                         net (fo=1, routed)           0.611     1.006    QLINK1/MMCM48_INST/CLK100_I_IBUF
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                      0.053     1.059 r  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
+                         net (fo=1, routed)           0.528     1.587    clk48
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.616 r  clk48_BUFG_inst/O
+                         net (fo=228, routed)         0.872     2.488    RAM0/CLK
+    RAMB36_X0Y7          RAMB36E1                                     r  RAM0/UNISIM_RAM0/CLKARDCLK
+                         clock pessimism             -0.589     1.899    
+    RAMB36_X0Y7          RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[4])
+                                                      0.296     2.195    RAM0/UNISIM_RAM0
+  -------------------------------------------------------------------
+                         required time                         -2.195    
+                         arrival time                           2.393    
+  -------------------------------------------------------------------
+                         slack                                  0.198    
 
 
 
@@ -1381,37 +1364,37 @@ Period(ns):         62.500
 Sources:            { QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         62.500      59.924     RAMB36_X0Y6      RAM0/UNISIM_RAM1/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         62.500      59.924     RAMB36_X0Y6      RAM0/UNISIM_RAM1/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         62.500      59.924     RAMB36_X0Y7      RAM0/UNISIM_RAM0/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         62.500      59.924     RAMB36_X0Y7      RAM0/UNISIM_RAM0/CLKBWRCLK
 Min Period        n/a     BUFG/I              n/a            2.155         62.500      60.345     BUFGCTRL_X0Y0    clk48_BUFG_inst/I
 Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         62.500      61.251     MMCME2_ADV_X1Y0  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X13Y9      QLINK1/DECODE/nxt_data_reg[0]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X15Y8      QLINK1/DECODE/nxt_data_reg[1]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X12Y8      QLINK1/DECODE/nxt_data_reg[2]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X12Y7      QLINK1/DECODE/nxt_data_reg[3]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X13Y8      QLINK1/DECODE/nxt_data_reg[4]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X16Y8      QLINK1/DECODE/nxt_data_reg[5]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X13Y7      QLINK1/DECODE/nxt_data_reg[6]/C
-Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X14Y11     QLINK1/FSM_onehot_rx_state_reg[3]/C
+Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X8Y31      MemCpy/DATA_B_O_reg[0]/C
+Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X8Y31      MemCpy/DATA_B_O_reg[10]/C
+Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X8Y34      MemCpy/DATA_B_O_reg[11]/C
+Min Period        n/a     FDRE/C              n/a            1.000         62.500      61.500     SLICE_X8Y31      MemCpy/DATA_B_O_reg[12]/C
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       62.500      150.860    MMCME2_ADV_X1Y0  QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X13Y9      QLINK1/DECODE/nxt_data_reg[0]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X14Y11     QLINK1/FSM_onehot_rx_state_reg[3]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y14      QLINK1/clk_cnt_reg[13]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y14      QLINK1/clk_cnt_reg[14]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y14      QLINK1/clk_cnt_reg[15]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y15      QLINK1/clk_cnt_reg[16]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y15      QLINK1/clk_cnt_reg[17]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y15      QLINK1/clk_cnt_reg[18]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y15      QLINK1/clk_cnt_reg[19]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X6Y16      QLINK1/clk_cnt_reg[20]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X12Y18     QLINK1/data32_reg[18]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X12Y18     QLINK1/data32_reg[19]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y18      RAM0/RAM_reg[0][9]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X16Y21     RAM0/RAM_reg[10][11]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y17     RAM0/RAM_reg[12][1]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y17     RAM0/RAM_reg[12][23]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y17     RAM0/RAM_reg[12][25]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y17     RAM0/RAM_reg[12][28]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y21     RAM0/RAM_reg[12][2]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X18Y17     RAM0/RAM_reg[12][3]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[0]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[10]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[12]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[20]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[22]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X12Y38     QLINK1/ENCODE/nxt_bitcnt_reg[3]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X14Y39     QLINK1/ENCODE/subcnt_reg[0]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X14Y39     QLINK1/ENCODE/subcnt_reg[1]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X14Y39     QLINK1/ENCODE/subcnt_reg[2]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X14Y39     QLINK1/ENCODE/subcnt_reg[3]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[10]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y34      MemCpy/DATA_B_O_reg[11]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[12]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y34      MemCpy/DATA_B_O_reg[13]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y34      MemCpy/DATA_B_O_reg[14]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y38      MemCpy/DATA_B_O_reg[15]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y34      MemCpy/DATA_B_O_reg[17]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y31      MemCpy/DATA_B_O_reg[20]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         31.250      30.750     SLICE_X8Y38      MemCpy/DATA_B_O_reg[21]/C
 
 
 

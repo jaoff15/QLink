@@ -4,20 +4,14 @@ stty -F /dev/ttyUSB0 1:0:80001cb8:0:3:1c:7f:15:4:5:1:0:11:13:1a:0:12:f:17:16:0:0
 
 # Write 
 echo "#R:37" > /dev/ttyUSB0
-echo "#W:9B:12345678" > /dev/ttyUSB0
-echo "#r:9B" > /dev/ttyUSB0
+
+echo "#R:01" > /dev/ttyUSB0
+echo "#R:02" > /dev/ttyUSB0
+
+echo "#W:0112345678" > /dev/ttyUSB0
+echo "#W:0287654321" > /dev/ttyUSB0
 
 # Listen
 cat /dev/ttyUSB0 
 
 
-# ADR "A_" = Inferred RAM
-# ADR "B_" = Block RAM
-
-# Test
-echo "#W:A012345678" > /dev/ttyUSB0;
-echo "#R:A0" > /dev/ttyUSB0;
-sleep 1;
-echo "#W:A187654321" > /dev/ttyUSB0;
-echo "#R:A1" > /dev/ttyUSB0;
-sleep 1;

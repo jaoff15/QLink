@@ -23,19 +23,20 @@ create_project -in_memory -part xc7s25ftgb196-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.cache/wt [current_project]
-set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.xpr [current_project]
+set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/wt [current_project]
+set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.cache/ip [current_project]
+set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/new/ram_module.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/memory_copy_module.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -45,8 +46,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
-set_property used_in_implementation false [get_files /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc]
+read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
+set_property used_in_implementation false [get_files /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

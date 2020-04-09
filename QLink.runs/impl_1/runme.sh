@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.runs/impl_1'
+HD_PWD='/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

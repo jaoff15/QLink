@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7s25ftgb196-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.cache/wt [current_project]
-  set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.xpr [current_project]
-  set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/wt [current_project]
+  set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.xpr [current_project]
+  set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.runs/synth_1/receiver_top.dcp
-  read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
+  add_files -quiet /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/receiver_top.dcp
+  read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
   link_design -top receiver_top -part xc7s25ftgb196-1
   close_msg_db -file init_design.pb
 } RESULT]

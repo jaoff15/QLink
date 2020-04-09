@@ -2,11 +2,16 @@
 2018.2
 Jun 14 2018
 20:07:38
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sim_1/new/qlink_tb.vhd,1585573801,vhdl,,,,qlink_tb,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd,1585392219,vhdl,,,,decode_serial,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd,1585038809,vhdl,,,,encode_serial,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd,1585038809,vhdl,,,,mmcm48,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd,1585483334,vhdl,,,,qlinkmaster,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd,1585573611,vhdl,,,,receiver_top,,,,,,,,
 /home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/imports/QLink_2020/test_receiver.vhd,1585038809,vhdl,,,,my_test,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/sources_1/new/ram_module.vhd,1585573931,vhdl,,,,ram_module,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.ip_user_files/bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v,1585576604,verilog,,,,design_1_blk_mem_gen_0_0,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.ip_user_files/bd/design_1/sim/design_1.vhd,1585576604,vhdl,,,,design_1,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sim_1/new/qlink_tb.vhd,1585576596,vhdl,,,,qlink_tb,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd,1585576604,vhdl,,,,design_1_wrapper,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd,1585392219,vhdl,,,,decode_serial,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd,1585038809,vhdl,,,,encode_serial,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd,1585038809,vhdl,,,,mmcm48,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd,1585483334,vhdl,,,,qlinkmaster,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd,1586427797,vhdl,,,,receiver_top,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd,1586434453,vhdl,,,,block_ram_module,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/memory_copy_module.vhd,1586434116,vhdl,,,,memory_copy_module,,,,,,,,

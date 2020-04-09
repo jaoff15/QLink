@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/jacoboffersen/advanced_programmable_electronics/QLink/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc rfile:../../../QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc rfile:../../../QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:23 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN L5 [get_ports CLK100_I]
 set_property src_info {type:XDC file:1 line:26 export:INPUT save:INPUT read:READ} [current_design]
