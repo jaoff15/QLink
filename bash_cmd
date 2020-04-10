@@ -1,24 +1,20 @@
 #!/bin/bash
-#echo "#W:0111223344";
-echo "#W:0111223344......."  > /dev/ttyUSB0
-#sleep 1
-for i in {00..10}
-do
-	echo "#R:$i....................."  > /dev/ttyUSB0
-done
-for i in {80..90}
-do
-	echo "#R:$i....................."  > /dev/ttyUSB0
+for i in {0,1,2,3,4,5,6,7}; 
+	do for j in {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}; 
+		do echo "#W:$i$j$i$j$i$j$i$j$i$j........."  > /dev/ttyUSB0
+#		do echo "#W:$i$j$i$j$i$j$i$j$i$j";
+	done; 
+	sleep 0.1
 done
 
-#sleep 1
-#for i in {00..90}
-#do
-#	echo "#R:$i....................."  > /dev/ttyUSB0
-#done
+sleep 1
+for i in {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}; 
+	do for j in {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}; 
+		do echo "#r:$i$j....................."  > /dev/ttyUSB0
+#		do echo "#R:$i$j";
+	done; 
+	sleep 0.1
+done
 
-#sleep 1
-#for i in {00..90}
-#do
-#	echo "#R:$i....................."  > /dev/ttyUSB0
-#done
+
+
