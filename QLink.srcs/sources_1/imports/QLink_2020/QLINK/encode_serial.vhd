@@ -35,7 +35,6 @@ architecture rtl of encode_serial is
   signal tx_req   : std_logic;
   signal tx_done  : std_logic;
   signal clk_uart : std_logic;
---  signal clk_sys  : std_logic;
   signal reset    : std_logic;
   signal tx       : std_logic;
  
@@ -43,30 +42,28 @@ architecture rtl of encode_serial is
 begin
 
 
-reset<=RESET_I;
--- clk_sys<=CLK_SYS_I;
-clk_uart<=CLK_UART_I;
-TX_O<=tx;
-wr<=WR_I;
-BUSY_O<=tx_req;
+reset   <= RESET_I;
+clk_uart<= CLK_UART_I;
+TX_O    <= tx;
+wr      <= WR_I;
+BUSY_O  <= tx_req;
 
 process(clk_uart,reset)
- 
 begin
-  if clk_uart'event and clk_uart='1' then
-    if reset='1' then
-      tx_req<='0';
-      data<="00000000";
+  if rising_edge(clk_uart) then
+    if reset = '1' then
+      tx_req <= '0';
+      data   <= x"00";
     else
-      if wr='1' then
-        tx_req<='1';
-        data <= DATA_I;
+      if wr = '1' then
+        tx_req <= '1';
+        data   <= DATA_I;
       else 
-        data<=data;
-        if tx_done='1' then
-          tx_req<='0';
+        data <= data;
+        if tx_done = '1' then
+          tx_req <= '0';
         else
-          tx_req<=tx_req;
+          tx_req <= tx_req;
         end if;
       end if;
     end if; -- RESET
@@ -75,50 +72,50 @@ end process;
 
 process(clk_uart,reset)
 
-  variable nxt_bitcnt : integer range 0 to 9;
-  variable nxt_subcnt : integer range 0 to 15;
-  variable nxt_tx_done : std_logic;
-  variable nxt_tx: std_logic;
+  variable nxt_bitcnt   : integer range 0 to 9;
+  variable nxt_subcnt   : integer range 0 to 15;
+  variable nxt_tx_done  : std_logic;
+  variable nxt_tx       : std_logic;
   
 begin
-  if clk_uart'event and clk_uart='1' then
-    if reset='1' or tx_req='0' then
-      nxt_bitcnt:=0;
-      nxt_subcnt:=0;
-      nxt_tx:='1';
-      nxt_tx_done:='0';
+  if rising_edge(clk_uart) then
+    if reset = '1' or tx_req = '0' then
+      nxt_bitcnt  := 0;
+      nxt_subcnt  := 0;
+      nxt_tx      := '1';
+      nxt_tx_done := '0';
     else
-      nxt_tx_done:=tx_done;
-      if subcnt<15 then
-        nxt_subcnt:=subcnt+1;
+      nxt_tx_done := tx_done;
+      if subcnt < 15 then
+        nxt_subcnt := subcnt + 1;
       else
-        nxt_subcnt:=0;
-        if bitcnt<9 then
-          nxt_bitcnt:=bitcnt+1;
+        nxt_subcnt := 0;
+        if bitcnt < 9 then
+          nxt_bitcnt := bitcnt + 1;
         else
-          nxt_tx_done:='1';
-          if tx_req='1' then
-            nxt_bitcnt:=bitcnt;
-            nxt_subcnt:=subcnt;
+          nxt_tx_done := '1';
+          if tx_req = '1' then
+            nxt_bitcnt := bitcnt;
+            nxt_subcnt := subcnt;
           else
-            nxt_bitcnt:=0;
+            nxt_bitcnt := 0;
           end if;
         end if;
       end if;
       
-      if bitcnt=0 then
-        nxt_tx:='0'; -- start bit
-      elsif bitcnt<9 then
-        nxt_tx:=data(bitcnt-1);
+      if bitcnt = 0 then
+        nxt_tx := '0'; -- start bit
+      elsif bitcnt < 9 then
+        nxt_tx := data(bitcnt-1);
       else 
-        nxt_tx:='1'; -- stop bit
+        nxt_tx := '1'; -- stop bit
       end if; -- bitcnt=0
    end if; -- RESET
     
-   bitcnt<=nxt_bitcnt;
-   subcnt<=nxt_subcnt;
-   tx_done<=nxt_tx_done;
-   tx<=nxt_tx;
+   bitcnt   <= nxt_bitcnt;
+   subcnt   <= nxt_subcnt;
+   tx_done  <= nxt_tx_done;
+   tx       <= nxt_tx;
  
   end if; -- CLK
   

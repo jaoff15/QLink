@@ -32,8 +32,18 @@ architecture Behavioral of qlink_tb is
 
 component receiver_top is
     Port ( CLK100_I     : in STD_LOGIC;
+           -- UART
            TX_O        : out STD_LOGIC;
-           RX_I        : in STD_LOGIC);
+           RX_I        : in  STD_LOGIC;
+           
+           -- SPI
+           -- TX
+           SPI_MOSI_O  : out std_logic;
+           SPI_SCLK_O  : out std_logic;
+           -- RX
+           SPI_MOSI_I  : in  std_logic;
+           SPI_SCLK_I  : in  std_logic
+           );
 end component;
 
 
@@ -76,6 +86,11 @@ end component;
  --  signal tx_start : std_logic := '0';  
    signal tx_out   : std_logic := '0';
    signal rx_in    : std_logic := '1';
+   
+   signal spi_mosi   : std_logic := '0';
+   signal spi_sclk   : std_logic := '0';
+   
+   
    --signal rx_data  : std_logic_vector(7 downto 0);
 
   --  signal bus_master_clk : std_logic := '0';
@@ -140,14 +155,14 @@ begin
             when 0      => D := ASCII_HASHTAG;
             when 1      => D := ASCII_w;
             when 2      => D := ASCII_COLON;
-            when 3      => D := ASCII_B;
-            when 4      => D := ASCII_B;
+            when 3      => D := ASCII_1;
+            when 4      => D := ASCII_0;
  --           when 5      => D := ASCII_COLON;
             when 5      => D := ASCII_1;
             when 6      => D := ASCII_2;
             when 7      => D := ASCII_3;
             when 8      => D := ASCII_4;
-            when 9     => D := ASCII_5;
+            when 9      => D := ASCII_5;
             when 10     => D := ASCII_6;
             when 11     => D := ASCII_7;
             when 12     => D := ASCII_8;
@@ -157,8 +172,8 @@ begin
             when 15     => D := ASCII_HASHTAG;
             when 16     => D := ASCII_rr;
             when 17     => D := ASCII_COLON;
-            when 18     => D := ASCII_B;
-            when 19     => D := ASCII_b;
+            when 18     => D := ASCII_9;
+            when 19     => D := ASCII_0;
 --            when 19     => D := ascii_cr;
             when others => D := (others => '0');
                         done := true;
@@ -190,9 +205,18 @@ end process;
 
 
 receiver_top0: receiver_top
-port map(  CLK100_I => clk,
-           TX_O     => tx_out,
-           RX_I     => rx_in );
+port map(  CLK100_I     => clk,
+           -- UART
+           TX_O         => tx_out,
+           RX_I         => rx_in,
+           -- SPI
+           -- TX
+           SPI_MOSI_O   => spi_mosi,
+           SPI_SCLK_O   => spi_sclk,
+           -- RX
+           SPI_MOSI_I   => spi_mosi,
+           SPI_SCLK_I   => spi_sclk
+           );
 
 
 

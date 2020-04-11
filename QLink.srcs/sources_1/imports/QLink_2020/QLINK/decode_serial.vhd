@@ -48,7 +48,7 @@ entity decode_serial is
     variable nxt_strobe  : std_logic;
     variable nxt_strobe2 : std_logic;
   begin
-    if clk_uart'event and clk_uart='1' then
+    if rising_edge(clk_uart) then
       nxt_strobe    := '0';
       nxt_strobe2   := '0';
       if bitcnt = 9 then
@@ -69,10 +69,10 @@ entity decode_serial is
     variable nxt_data   : std_logic_vector(7 downto 0) := data;
 
   begin
-    if clk_uart'event and clk_uart='1' then 
+    if rising_edge(clk_uart) then 
       if sys_reset='1' then
-        nxt_bitcnt  :=0;              -- reset bit counter
-        nxt_subcnt  :=0;              -- reset sub-bit counter
+        nxt_bitcnt  := 0;              -- reset bit counter
+        nxt_subcnt  := 0;              -- reset sub-bit counter
         nxt_data    := "00000000";
       else  --- IF NOT RESET
         if (subcnt=0) and (bitcnt=0) and (rx='1') then

@@ -48,66 +48,52 @@ architecture Behavioral of block_RAM_module is
     -- Write enable
     signal portA_0_we, portA_1_we  : std_logic_vector ( 3 downto 0 ) := (others => '0');
     signal portB_0_we, portB_1_we  : std_logic_vector ( 7 downto 0 ) := (others => '0');
---    signal portA_0_we, portA_1_we  : std_logic := '0';
---    signal portB_0_we, portB_1_we  : std_logic := '0';
 
-
-
-
---    signal bram_addr_0,bram_addr_1 : std_logic_vector(31 downto 0) := (others => '0');
---    signal bram_a_en_0,bram_a_en_1 : std_logic := '0';
---    signal bram_b_en_0,bram_b_en_1 : std_logic := '0';
-    
---    signal addr_a, addr_b : std_logic_vector(7 downto 0) := (others => '0');    
-    
---    signal data_ram_i  : std_logic_vector(31 downto 0) := (others => '0');
---    signal data_brama_o,data_bramb_o   : std_logic_vector(31 downto 0) := (others => '0');
---    signal data_brama_o_0,data_brama_o_1   : std_logic_vector(31 downto 0) := (others => '0');
---    signal data_bramb_o_0,data_bramb_o_1   : std_logic_vector(31 downto 0) := (others => '0');
-
---    signal we_signal_0, we_signal_1   : std_logic_vector(3 downto 0) := (others => '0');
-    
 begin
 
 
 
 -- Addresses
---portA_0_addr <= x"00" & '0' & ADDR_BA_I(6 downto 0);
---portA_1_addr <= x"00" & '0' & ADDR_BA_I(6 downto 0);
---portB_0_addr <= x"00" & '0' & ADDR1_BB_I(6 downto 0);
---portB_1_addr <= x"00" & '0' & ADDR2_BB_I(6 downto 0);
 portA_0_addr <= x"0" & ADDR_BA_I(6 downto 0)  & "00000";
 portA_1_addr <= x"0" & ADDR_BA_I(6 downto 0)  & "00000";
 portB_0_addr <= x"0" & ADDR1_BB_I(6 downto 0) & "00000";
 portB_1_addr <= x"0" & ADDR2_BB_I(6 downto 0) & "00000";
 
 -- Data in
-
 portA_0_din <= DATA_BA_I;
---portA_1_din <= DATA_BA_I;
+portA_1_din <= DATA_BA_I;
+portB_0_din <= x"00000000";
 portB_1_din <= DATA_BB_I;
 
 
 with ADDR_BA_I(7) select
-    DATA_BA_O <= portA_1_do when '1',
-                 portA_0_do when others;
-                 
+    DATA_BA_O <= portA_0_do when '0',
+                 portA_1_do when '1',
+                 x"eeeeeeee" when others;
+
 DATA_BB_O <= portB_0_do;
 
 -- Write enable
-portA_0_we <= (others => WR_A_I);
+with ADDR_BA_I(7) select
+    portA_0_we <= (others => WR_A_I) when '0',
+                  (others => '0') when others;
+                  
+with ADDR_BA_I(7) select
+    portA_1_we <= (others => WR_A_I) when '1',
+                  (others => '0') when others;
+                  
+                  
+--portA_0_we <= (others => WR_A_I);
 portB_1_we <= (others => WR_B_I);
+--portB_1_we <= (others => '1');
 
 -- Enable
---portA_0_en <= not ADDR_BA_I(7);
---portA_1_en <=     ADDR_BA_I(7);
 portA_0_en <= '1';
 portA_1_en <= '1';
+--portA_0_en <= not ADDR_BA_I(7);
+--portA_1_en <=     ADDR_BA_I(7);
 portB_0_en <= '1';
 portB_1_en <= '1';
-
-
-
 
 
 
@@ -119,11 +105,11 @@ UNISIM_RAM0 : RAMB36E1
       -- Collision check: Values ("ALL", "WARNING_ONLY", "GENERATE_X_ONLY" or "NONE")
       SIM_COLLISION_CHECK => "ALL",
       -- DOA_REG, DOB_REG: Optional output register (0 or 1)
-      DOA_REG => 0,
-      DOB_REG => 0,
-      EN_ECC_READ => FALSE,                                                            -- Enable ECC decoder,
+      DOA_REG       => 0,
+      DOB_REG       => 0,
+      EN_ECC_READ   => FALSE,                                                            -- Enable ECC decoder,
                                                                                        -- FALSE, TRUE
-      EN_ECC_WRITE => FALSE,                                                           -- Enable ECC encoder,
+      EN_ECC_WRITE  => FALSE,                                                           -- Enable ECC encoder,
                                                                                        -- FALSE, TRUE
       -- INITP_00 to INITP_0F: Initial contents of the parity memory array
       INITP_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -272,78 +258,77 @@ UNISIM_RAM0 : RAMB36E1
       INIT_7E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_7F => X"0000000000000000000000000000000000000000000000000000000000000000",
       -- INIT_A, INIT_B: Initial values on output ports
-      INIT_A => X"000000000",
-      INIT_B => X"000000000",
+      INIT_A            => X"000000000",
+      INIT_B            => X"000000000",
       -- Initialization File: RAM initialization file
-      INIT_FILE => "NONE",
+      INIT_FILE         => "NONE",
       -- RAM Mode: "SDP" or "TDP" 
-      RAM_MODE => "TDP",
+      RAM_MODE          => "TDP",
       -- RAM_EXTENSION_A, RAM_EXTENSION_B: Selects cascade mode ("UPPER", "LOWER", or "NONE")
-      RAM_EXTENSION_A => "NONE",
-      RAM_EXTENSION_B => "NONE",
+      RAM_EXTENSION_A   => "NONE",
+      RAM_EXTENSION_B   => "NONE",
       -- READ_WIDTH_A/B, WRITE_WIDTH_A/B: Read/write width per port
-      READ_WIDTH_A  => 36,                                                               -- 0-72
-      READ_WIDTH_B  => 36,                                                               -- 0-36
-      WRITE_WIDTH_A => 36,                                                              -- 0-36
-      WRITE_WIDTH_B => 36,                                                              -- 0-72
+      READ_WIDTH_A      => 36,                  -- 0-72
+      READ_WIDTH_B      => 36,                  -- 0-36
+      WRITE_WIDTH_A     => 36,                  -- 0-36
+      WRITE_WIDTH_B     => 36,                  -- 0-72
       -- RSTREG_PRIORITY_A, RSTREG_PRIORITY_B: Reset or enable priority ("RSTREG" or "REGCE")
       RSTREG_PRIORITY_A => "RSTREG",
       RSTREG_PRIORITY_B => "RSTREG",
       -- SRVAL_A, SRVAL_B: Set/reset value for output
-      SRVAL_A => X"000000000",
-      SRVAL_B => X"000000000",
+      SRVAL_A           => X"000000000",
+      SRVAL_B           => X"000000000",
       -- Simulation Device: Must be set to "7SERIES" for simulation behavior
-      SIM_DEVICE => "7SERIES",
+      SIM_DEVICE        => "7SERIES",
       -- WriteMode: Value on output upon a write ("WRITE_FIRST", "READ_FIRST", or "NO_CHANGE")
-      WRITE_MODE_A => "WRITE_FIRST",
-      WRITE_MODE_B => "WRITE_FIRST" 
+      WRITE_MODE_A      => "WRITE_FIRST",
+      WRITE_MODE_B      => "WRITE_FIRST" 
    )
    port map (
       -- Cascade Signals: 1-bit (each) output: BRAM cascade ports (to create 64kx1)
---      CASCADEOUTA => CASCADEOUTA,     -- 1-bit output: A port cascade
---      CASCADEOUTB => CASCADEOUTB,     -- 1-bit output: B port cascade
+--      CASCADEOUTA => CASCADEOUTA,             -- 1-bit output: A port cascade
+--      CASCADEOUTB => CASCADEOUTB,             -- 1-bit output: B port cascade
       -- ECC Signals: 1-bit (each) output: Error Correction Circuitry ports
---      DBITERR => DBITERR,             -- 1-bit output: Double bit error status
---      ECCPARITY => ECCPARITY,         -- 8-bit output: Generated error correction parity
---      RDADDRECC => RDADDRECC,         -- 9-bit output: ECC read address
---      SBITERR => ,             -- 1-bit output: Single bit error status
+--      DBITERR => DBITERR,                     -- 1-bit output: Double bit error status
+--      ECCPARITY => ECCPARITY,                 -- 8-bit output: Generated error correction parity
+--      RDADDRECC => RDADDRECC,                 -- 9-bit output: ECC read address
+--      SBITERR => ,                            -- 1-bit output: Single bit error status
       -- Port A Data: 32-bit (each) output: Port A data
-      DOADO => portA_0_do,                 -- 32-bit output: A port data/LSB data
+      DOADO             => portA_0_do,          -- 32-bit output: A port data/LSB data
       --DOPADOP => DOPADOP,             -- 4-bit output: A port parity/LSB parity
       -- Port B Data: 32-bit (each) output: Port B data
-      DOBDO => portB_0_do,                 -- 32-bit output: B port data/MSB data
---      DOPBDOP => DOPBDOP,             -- 4-bit output: B port parity/MSB parity
+      DOBDO             => portB_0_do,          -- 32-bit output: B port data/MSB data
+--      DOPBDOP => DOPBDOP,                     -- 4-bit output: B port parity/MSB parity
       -- Cascade Signals: 1-bit (each) input: BRAM cascade ports (to create 64kx1)
-      CASCADEINA => '0',       -- 1-bit input: A port cascade
-      CASCADEINB => '0',       -- 1-bit input: B port cascade
+      CASCADEINA        => '0',                 -- 1-bit input: A port cascade
+      CASCADEINB        => '0',                 -- 1-bit input: B port cascade
       -- ECC Signals: 1-bit (each) input: Error Correction Circuitry ports
-      INJECTDBITERR => '0', -- 1-bit input: Inject a double bit error
-      INJECTSBITERR => '0', -- 1-bit input: Inject a single bit error
+      INJECTDBITERR     => '0',                 -- 1-bit input: Inject a double bit error
+      INJECTSBITERR     => '0',                 -- 1-bit input: Inject a single bit error
       -- Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
       -- when RAM_MODE="SDP")
-      ADDRARDADDR => portA_0_addr,     -- 16-bit input: A port address/Read address
-      CLKARDCLK => CLK_I,         -- 1-bit input: A port clock/Read clock
-      ENARDEN => portA_0_en,             -- 1-bit input: A port enable/Read enable
-      REGCEAREGCE => '1',     -- 1-bit input: A port register enable/Register enable
-      RSTRAMARSTRAM => '0', -- 1-bit input: A port set/reset
-      RSTREGARSTREG => '0', -- 1-bit input: A port register set/reset
-      WEA => portA_0_we,                     -- 4-bit input: A port write enable
+      ADDRARDADDR       => portA_0_addr,        -- 16-bit input: A port address/Read address
+      CLKARDCLK         => CLK_I,               -- 1-bit input: A port clock/Read clock
+      ENARDEN           => portA_0_en,          -- 1-bit input: A port enable/Read enable
+      REGCEAREGCE       => '1',                 -- 1-bit input: A port register enable/Register enable
+      RSTRAMARSTRAM     => '0',                 -- 1-bit input: A port set/reset
+      RSTREGARSTREG     => '0',                 -- 1-bit input: A port register set/reset
+      WEA               => portA_0_we,          -- 4-bit input: A port write enable
       -- Port A Data: 32-bit (each) input: Port A data
-      DIADI => portA_0_din,                 -- 32-bit input: A port data/LSB data
-      DIPADIP => "0000",             -- 4-bit input: A port parity/LSB parity
+      DIADI             => portA_0_din,         -- 32-bit input: A port data/LSB data
+      DIPADIP           => "0000",              -- 4-bit input: A port parity/LSB parity
       -- Port B Address/Control Signals: 16-bit (each) input: Port B address and control signals (write port
       -- when RAM_MODE="SDP")
-      ADDRBWRADDR => portB_0_addr,     -- 16-bit input: B port address/Write address
-      CLKBWRCLK => CLK_I,         -- 1-bit input: B port clock/Write clock
-      ENBWREN => portB_0_en,             -- 1-bit input: B port enable/Write enable
-      REGCEB => '1',               -- 1-bit input: B port register enable
-      RSTRAMB => '0',             -- 1-bit input: B port set/reset
-      RSTREGB => '0',             -- 1-bit input: B port register set/reset
-      WEBWE => x"00",                 -- 8-bit input: B port write enable/Write enable
+      ADDRBWRADDR       => portB_0_addr,        -- 16-bit input: B port address/Write address
+      CLKBWRCLK         => CLK_I,               -- 1-bit input: B port clock/Write clock
+      ENBWREN           => portB_0_en,          -- 1-bit input: B port enable/Write enable
+      REGCEB            => '1',                 -- 1-bit input: B port register enable
+      RSTRAMB           => '0',                 -- 1-bit input: B port set/reset
+      RSTREGB           => '0',                 -- 1-bit input: B port register set/reset
+      WEBWE             => x"00",               -- 8-bit input: B port write enable/Write enable
       -- Port B Data: 32-bit (each) input: Port B data
-      DIBDI => portB_0_din
-      ,                 -- 32-bit input: B port data/MSB data
-      DIPBDIP => "0000"              -- 4-bit input: B port parity/MSB parity
+      DIBDI             => portB_0_din,         -- 32-bit input: B port data/MSB data
+      DIPBDIP           => "0000"               -- 4-bit input: B port parity/MSB parity
    );
 
 UNISIM_RAM1 : RAMB36E1
@@ -353,11 +338,11 @@ UNISIM_RAM1 : RAMB36E1
     -- Collision check: Values ("ALL", "WARNING_ONLY", "GENERATE_X_ONLY" or "NONE")
     SIM_COLLISION_CHECK => "ALL",
     -- DOA_REG, DOB_REG: Optional output register (0 or 1)
-    DOA_REG => 0,
-    DOB_REG => 0,
-    EN_ECC_READ => FALSE,                                                            -- Enable ECC decoder,
+    DOA_REG         => 0,
+    DOB_REG         => 0,
+    EN_ECC_READ     => FALSE,                                                            -- Enable ECC decoder,
                                                                                      -- FALSE, TRUE
-    EN_ECC_WRITE => FALSE,                                                           -- Enable ECC encoder,
+    EN_ECC_WRITE    => FALSE,                                                           -- Enable ECC encoder,
                                                                                      -- FALSE, TRUE
     -- INITP_00 to INITP_0F: Initial contents of the parity memory array
     INITP_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -506,80 +491,79 @@ UNISIM_RAM1 : RAMB36E1
     INIT_7E => X"0000000000000000000000000000000000000000000000000000000000000000",
     INIT_7F => X"0000000000000000000000000000000000000000000000000000000000000000",
     -- INIT_A, INIT_B: Initial values on output ports
-    INIT_A => X"000000000",
-    INIT_B => X"000000000",
+    INIT_A              => X"000000000",
+    INIT_B              => X"000000000",
     -- Initialization File: RAM initialization file
-    INIT_FILE => "NONE",
+    INIT_FILE           => "NONE",
     -- RAM Mode: "SDP" or "TDP" 
-    RAM_MODE => "TDP",
+    RAM_MODE            => "TDP",
     -- RAM_EXTENSION_A, RAM_EXTENSION_B: Selects cascade mode ("UPPER", "LOWER", or "NONE")
-    RAM_EXTENSION_A => "NONE",
-    RAM_EXTENSION_B => "NONE",
+    RAM_EXTENSION_A     => "NONE",
+    RAM_EXTENSION_B     => "NONE",
     -- READ_WIDTH_A/B, WRITE_WIDTH_A/B: Read/write width per port
-    READ_WIDTH_A  => 36,                                                               -- 0-72
-    READ_WIDTH_B  => 36,                                                               -- 0-36
-    WRITE_WIDTH_A => 36,                                                              -- 0-36
-    WRITE_WIDTH_B => 36,                                                              -- 0-72
+    READ_WIDTH_A        => 36,                                                               -- 0-72
+    READ_WIDTH_B        => 36,                                                               -- 0-36
+    WRITE_WIDTH_A       => 36,                                                              -- 0-36
+    WRITE_WIDTH_B       => 36,                                                              -- 0-72
     -- RSTREG_PRIORITY_A, RSTREG_PRIORITY_B: Reset or enable priority ("RSTREG" or "REGCE")
-    RSTREG_PRIORITY_A => "RSTREG",
-    RSTREG_PRIORITY_B => "RSTREG",
+    RSTREG_PRIORITY_A   => "RSTREG",
+    RSTREG_PRIORITY_B   => "RSTREG",
     -- SRVAL_A, SRVAL_B: Set/reset value for output
-    SRVAL_A => X"000000000",
-    SRVAL_B => X"000000000",
+    SRVAL_A             => X"000000000",
+    SRVAL_B             => X"000000000",
     -- Simulation Device: Must be set to "7SERIES" for simulation behavior
-    SIM_DEVICE => "7SERIES",
+    SIM_DEVICE          => "7SERIES",
     -- WriteMode: Value on output upon a write ("WRITE_FIRST", "READ_FIRST", or "NO_CHANGE")
-    WRITE_MODE_A => "WRITE_FIRST",
-    WRITE_MODE_B => "WRITE_FIRST" 
+    WRITE_MODE_A        => "WRITE_FIRST",
+    WRITE_MODE_B        => "WRITE_FIRST" 
  )
  port map (
     -- Cascade Signals: 1-bit (each) output: BRAM cascade ports (to create 64kx1)
---      CASCADEOUTA => CASCADEOUTA,     -- 1-bit output: A port cascade
---      CASCADEOUTB => CASCADEOUTB,     -- 1-bit output: B port cascade
+--      CASCADEOUTA => CASCADEOUTA,          -- 1-bit output: A port cascade
+--      CASCADEOUTB => CASCADEOUTB,          -- 1-bit output: B port cascade
     -- ECC Signals: 1-bit (each) output: Error Correction Circuitry ports
---      DBITERR => DBITERR,             -- 1-bit output: Double bit error status
---      ECCPARITY => ECCPARITY,         -- 8-bit output: Generated error correction parity
---      RDADDRECC => RDADDRECC,         -- 9-bit output: ECC read address
---      SBITERR => ,             -- 1-bit output: Single bit error status
+--      DBITERR => DBITERR,                  -- 1-bit output: Double bit error status
+--      ECCPARITY => ECCPARITY,              -- 8-bit output: Generated error correction parity
+--      RDADDRECC => RDADDRECC,              -- 9-bit output: ECC read address
+--      SBITERR => ,                         -- 1-bit output: Single bit error status
     -- Port A Data: 32-bit (each) output: Port A data
-    DOADO => portA_1_do,                 -- 32-bit output: A port data/LSB data
---    DOADO => DATA_BA_O,                 -- 32-bit output: A port data/LSB data
+    DOADO           => portA_1_do,           -- 32-bit output: A port data/LSB data
+--    DOADO => DATA_BA_O,                    -- 32-bit output: A port data/LSB data
     
-    --DOPADOP => DOPADOP,             -- 4-bit output: A port parity/LSB parity
+    --DOPADOP => DOPADOP,                    -- 4-bit output: A port parity/LSB parity
     -- Port B Data: 32-bit (each) output: Port B data
-    DOBDO => portB_1_do,                 -- 32-bit output: B port data/MSB data
---      DOPBDOP => DOPBDOP,             -- 4-bit output: B port parity/MSB parity
+    DOBDO           => portB_1_do,           -- 32-bit output: B port data/MSB data
+--      DOPBDOP => DOPBDOP,                  -- 4-bit output: B port parity/MSB parity
     -- Cascade Signals: 1-bit (each) input: BRAM cascade ports (to create 64kx1)
-    CASCADEINA => '0',       -- 1-bit input: A port cascade
-    CASCADEINB => '0',       -- 1-bit input: B port cascade
+    CASCADEINA      => '0',                  -- 1-bit input: A port cascade
+    CASCADEINB      => '0',                  -- 1-bit input: B port cascade
     -- ECC Signals: 1-bit (each) input: Error Correction Circuitry ports
-    INJECTDBITERR => '0', -- 1-bit input: Inject a double bit error
-    INJECTSBITERR => '0', -- 1-bit input: Inject a single bit error
+    INJECTDBITERR   => '0',                  -- 1-bit input: Inject a double bit error
+    INJECTSBITERR   => '0',                  -- 1-bit input: Inject a single bit error
     -- Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
     -- when RAM_MODE="SDP")
-    ADDRARDADDR => portA_1_addr,     -- 16-bit input: A port address/Read address
-    CLKARDCLK => CLK_I,         -- 1-bit input: A port clock/Read clock
-    ENARDEN => portA_1_en,             -- 1-bit input: A port enable/Read enable
-    REGCEAREGCE => '1',     -- 1-bit input: A port register enable/Register enable
-    RSTRAMARSTRAM => '0', -- 1-bit input: A port set/reset
-    RSTREGARSTREG => '0', -- 1-bit input: A port register set/reset
-    WEA => x"0",                     -- 4-bit input: A port write enable
+    ADDRARDADDR     => portA_1_addr,         -- 16-bit input: A port address/Read address
+    CLKARDCLK       => CLK_I,                -- 1-bit input: A port clock/Read clock
+    ENARDEN         => portA_1_en,           -- 1-bit input: A port enable/Read enable
+    REGCEAREGCE     => '1',                  -- 1-bit input: A port register enable/Register enable
+    RSTRAMARSTRAM   => '0',                  -- 1-bit input: A port set/reset
+    RSTREGARSTREG   => '0',                  -- 1-bit input: A port register set/reset
+    WEA             => portA_1_we,           -- 4-bit input: A port write enable
     -- Port A Data: 32-bit (each) input: Port A data
-    DIADI => portA_1_din,                 -- 32-bit input: A port data/LSB data
-    DIPADIP => "0000",             -- 4-bit input: A port parity/LSB parity
+    DIADI           => portA_1_din,          -- 32-bit input: A port data/LSB data
+    DIPADIP         => "0000",               -- 4-bit input: A port parity/LSB parity
     -- Port B Address/Control Signals: 16-bit (each) input: Port B address and control signals (write port
     -- when RAM_MODE="SDP")
-    ADDRBWRADDR => portB_1_addr,     -- 16-bit input: B port address/Write address
-    CLKBWRCLK => CLK_I,         -- 1-bit input: B port clock/Write clock
-    ENBWREN => portB_1_en,             -- 1-bit input: B port enable/Write enable
-    REGCEB => '1',               -- 1-bit input: B port register enable
-    RSTRAMB => '0',             -- 1-bit input: B port set/reset
-    RSTREGB => '0',             -- 1-bit input: B port register set/reset
-    WEBWE => portB_1_we,                 -- 8-bit input: B port write enable/Write enable
+    ADDRBWRADDR     => portB_1_addr,         -- 16-bit input: B port address/Write address
+    CLKBWRCLK       => CLK_I,                -- 1-bit input: B port clock/Write clock
+    ENBWREN         => portB_1_en,           -- 1-bit input: B port enable/Write enable
+    REGCEB          => '1',                  -- 1-bit input: B port register enable
+    RSTRAMB         => '0',                  -- 1-bit input: B port set/reset
+    RSTREGB         => '0',                  -- 1-bit input: B port register set/reset
+    WEBWE           => portB_1_we,           -- 8-bit input: B port write enable/Write enable
     -- Port B Data: 32-bit (each) input: Port B data
-    DIBDI => portB_1_din
-    ,                 -- 32-bit input: B port data/MSB data
-    DIPBDIP => "0000"              -- 4-bit input: B port parity/MSB parity
+    DIBDI           => portB_1_din,          -- 32-bit input: B port data/MSB data
+    DIPBDIP         => "0000"                -- 4-bit input: B port parity/MSB parity
  );
 
 

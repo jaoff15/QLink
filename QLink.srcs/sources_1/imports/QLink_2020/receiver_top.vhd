@@ -1,16 +1,27 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
--- USE ieee.numeric_std.ALL; 
 
 Library UNISIM;                    -- For Xilinx primitives
 use UNISIM.vcomponents.all;        --   allow all "components"
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity receiver_top is
-    Port ( CLK100_I     : in STD_LOGIC;
-           TX_O        : out STD_LOGIC;
-           RX_I        : in STD_LOGIC;
+    Port ( CLK100_I    : in  STD_LOGIC;
            LEDS_O      : out STD_LOGIC_VECTOR(7 downto 0);
-           STATUSLED_O : out STD_LOGIC );
+           STATUSLED_O : out STD_LOGIC;
+           
+           -- UART
+           TX_O        : out STD_LOGIC;
+           RX_I        : in  STD_LOGIC;
+           
+           -- SPI
+           -- TX
+           SPI_MOSI_O  : out std_logic;
+           SPI_SCLK_O  : out std_logic;
+           -- RX
+           SPI_MOSI_I  : in  std_logic;
+           SPI_SCLK_I  : in  std_logic
+            );
 end receiver_top;
 
 architecture rtl of receiver_top is
@@ -63,41 +74,68 @@ component block_RAM_module is
        );
 end component;
 
-component memory_copy_module is
-Port ( CLK_I    : in  STD_LOGIC := '0';
-       RESET_I  : in  STD_LOGIC := '0';
-       ADDR1_B_O : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
-       ADDR2_B_O : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
-       DATA_B_I : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-       DATA_B_O : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-       WR_O     : out STD_LOGIC := '0');
+--component memory_copy_module is
+--Port ( CLK_I    : in  STD_LOGIC := '0';
+--       RESET_I  : in  STD_LOGIC := '0';
+--       ADDR1_B_O : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+--       ADDR2_B_O : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+--       DATA_B_I : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+--       DATA_B_O : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+--       WR_O     : out STD_LOGIC := '0');
+--end component;
+
+component SPI_RX is
+Port ( RESET_I   : in  STD_LOGIC := '0';
+       -- Data bus signals
+       ADDR_O    : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+       DATA_O    : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+       WR_O      : out STD_LOGIC := '0';
+       -- External Signals
+       SCLK_I    : in  STD_LOGIC := '0';
+       MOSI_I    : in std_logic  := '0'
+       );
+end component;
+
+component SPI_TX is
+Port ( CLK_I     : in  STD_LOGIC := '0';
+       RESET_I   : in  STD_LOGIC := '0';
+       -- Data bus signals
+       ADDR_O    : out STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+       DATA_I    : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+       -- External Signals
+       SCLK_O   : out STD_LOGIC := '0';
+       MOSI_O   : out STD_LOGIC := '0'
+       );
 end component;
 
 ---------------------- SIGNALS -------------------------
-    signal leds : std_logic_vector(7 downto 0);
+    signal leds : std_logic_vector(7 downto 0):= (others => '0');
 
 
     -- QLink signals
-    signal sys_reset : std_logic;
-    signal clk48     : std_logic;
-    signal rd     : std_logic;
+    signal sys_reset : std_logic := '0';
+    signal clk48     : std_logic := '0';
+    signal rd        : std_logic := '0';
     
     -- Port A
     -- QLink <-> RAM
-    signal adr_A       : std_logic_vector(7 downto 0);
-    signal wr_A     : std_logic;
-    signal data_A_O    : std_logic_vector(31 downto 0);
-    signal data_A_I  : std_logic_vector(31 downto 0);
+    signal adr_A        : std_logic_vector(7 downto 0)  := (others => '0');
+    signal wr_A         : std_logic := '0';
+    signal data_A_O     : std_logic_vector(31 downto 0) := (others => '0');
+    signal data_A_I     : std_logic_vector(31 downto 0) := (others => '0');
   
   
     -- Port B
     -- MemCpy <-> RAM
-    signal wr_B           : std_logic;
-    signal adr1_B, adr2_B : std_logic_vector(7 downto 0);
-    signal data_B_I       : std_logic_vector(31 downto 0);
-    signal data_B_O       : std_logic_vector(31 downto 0);
+    signal wr_B           : std_logic := '0';
+    signal adr1_B, adr2_B : std_logic_vector(7 downto 0)  := (others => '0');
+    signal data_B_I       : std_logic_vector(31 downto 0) := (others => '0');
+    signal data_B_O       : std_logic_vector(31 downto 0) := (others => '0');
   
+    -- SPI
+    signal clk_spi        : std_logic := '0';
   
+    signal q              : std_logic_vector(22 downto 0) := (others => '0');
   
 begin
 
@@ -129,21 +167,54 @@ port map(   CLK_I      => clk48,
             WR_A_I     => wr_A,
             -- Port B
             ADDR1_BB_I  => adr1_B,
+            DATA_BB_O  => data_B_O,
+            
             ADDR2_BB_I  => adr2_B,
             DATA_BB_I  => data_B_I,
-            DATA_BB_O  => data_B_O,
             WR_B_I     => wr_B
             );
 
 
-MemCpy:  memory_copy_module 
-port map ( CLK_I    => clk48,
-           RESET_I  => sys_reset,
-           ADDR1_B_O => adr1_B,
-           ADDR2_B_O => adr2_B,
-           DATA_B_I => data_B_O,
-           DATA_B_O => data_B_I,
-           WR_O     => wr_B);
+--MemCpy:  memory_copy_module 
+--port map ( CLK_I    => clk48,
+--           RESET_I  => sys_reset,
+--           ADDR1_B_O => adr1_B,
+--           ADDR2_B_O => adr2_B,
+--           DATA_B_I => data_B_O,
+--           DATA_B_O => data_B_I,
+--           WR_O     => wr_B);
 
+
+--clk_spi <= q(5);
+--process (clk48)
+--begin -- process
+--if rising_edge(clk48) then
+--    q <= q + 1;
+--end if;
+--end process;
+
+clk_spi <= clk48;
+
+SpiTx:  SPI_TX 
+port map ( CLK_I    => clk_spi,
+           RESET_I  => sys_reset,
+           -- Qlink
+           ADDR_O   => adr1_B,
+           DATA_I   => data_B_O,
+           -- SPI
+           SCLK_O   => SPI_SCLK_O,
+           MOSI_O   => SPI_MOSI_O
+);
+           
+SpiRx:  SPI_RX 
+port map (RESET_I   => sys_reset,
+          -- QLink
+          ADDR_O    => adr2_B,
+          DATA_O    => data_B_I,
+          WR_O      => wr_B,
+          -- SPI
+          SCLK_I    => SPI_SCLK_I,
+          MOSI_I    => SPI_MOSI_I
+);
 
 end rtl;
