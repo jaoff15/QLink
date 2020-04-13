@@ -84,6 +84,14 @@ end component;
 --       WR_O     : out STD_LOGIC := '0');
 --end component;
 
+component spi_clk_gen_wrapper is
+  port (
+    clk_in1_0 : in STD_LOGIC;
+    clk_out1_0 : out STD_LOGIC
+  );
+end component;
+
+
 component SPI_RX is
 Port ( RESET_I   : in  STD_LOGIC := '0';
        -- Data bus signals
@@ -134,6 +142,7 @@ end component;
   
     -- SPI
     signal clk_spi        : std_logic := '0';
+    signal spi_reset      : std_logic := '0';
   
     signal q              : std_logic_vector(22 downto 0) := (others => '0');
   
@@ -193,7 +202,15 @@ port map(   CLK_I      => clk48,
 --end if;
 --end process;
 
-clk_spi <= clk48;
+
+SpiClk: spi_clk_gen_wrapper 
+port map(
+    clk_in1_0   => CLK100_I,
+    clk_out1_0  => clk_spi
+  );
+
+
+--clk_spi <= clk48;
 
 SpiTx:  SPI_TX 
 port map ( CLK_I    => clk_spi,

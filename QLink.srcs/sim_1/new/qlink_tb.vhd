@@ -158,6 +158,14 @@ begin
             when 3      => D := ASCII_1;
             when 4      => D := ASCII_0;
  --           when 5      => D := ASCII_COLON;
+--            when 5      => D := ASCII_F;
+--            when 6      => D := ASCII_F;
+--            when 7      => D := ASCII_F;
+--            when 8      => D := ASCII_F;
+--            when 9      => D := ASCII_F;
+--            when 10     => D := ASCII_F;
+--            when 11     => D := ASCII_F;
+--            when 12     => D := ASCII_F;
             when 5      => D := ASCII_1;
             when 6      => D := ASCII_2;
             when 7      => D := ASCII_3;

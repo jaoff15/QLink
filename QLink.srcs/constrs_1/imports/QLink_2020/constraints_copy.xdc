@@ -52,3 +52,8 @@ set_property PACKAGE_PIN L2 [get_ports SPI_MOSI_O]
 set_property PACKAGE_PIN F4 [get_ports SPI_SCLK_I]
 set_property PACKAGE_PIN H3 [get_ports SPI_SCLK_O]
 
+
+set_property SLEW FAST [get_ports SPI_MOSI_O]
+set_property SLEW FAST [get_ports SPI_SCLK_O]
+set_property DRIVE 16 [get_ports SPI_SCLK_O]
+set_property DRIVE 16 [get_ports SPI_MOSI_O]
