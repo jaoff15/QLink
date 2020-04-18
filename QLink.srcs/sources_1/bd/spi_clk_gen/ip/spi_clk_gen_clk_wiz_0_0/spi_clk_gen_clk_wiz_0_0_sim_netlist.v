@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Sat Apr 11 15:48:16 2020
+// Date        : Mon Apr 13 11:30:24 2020
 // Host        : JacobOffersen running 64-bit Ubuntu 19.10
 // Command     : write_verilog -force -mode funcsim -rename_top spi_clk_gen_clk_wiz_0_0 -prefix
-//               spi_clk_gen_clk_wiz_0_0_ spi_clk_generator_clk_wiz_0_0_sim_netlist.v
-// Design      : spi_clk_generator_clk_wiz_0_0
+//               spi_clk_gen_clk_wiz_0_0_ spi_clk_gen_clk_wiz_0_0_sim_netlist.v
+// Design      : spi_clk_gen_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7s25ftgb196-1
@@ -22,23 +22,23 @@ module spi_clk_gen_clk_wiz_0_0
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
 
-  spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz inst
+  spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1));
 endmodule
 
-module spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
+module spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz
    (clk_out1,
     clk_in1);
   output clk_out1;
   input clk_in1;
 
   wire clk_in1;
-  wire clk_in1_spi_clk_generator_clk_wiz_0_0;
+  wire clk_in1_spi_clk_gen_clk_wiz_0_0;
   wire clk_out1;
-  wire clk_out1_spi_clk_generator_clk_wiz_0_0;
-  wire clkfbout_buf_spi_clk_generator_clk_wiz_0_0;
-  wire clkfbout_spi_clk_generator_clk_wiz_0_0;
+  wire clk_out1_spi_clk_gen_clk_wiz_0_0;
+  wire clkfbout_buf_spi_clk_gen_clk_wiz_0_0;
+  wire clkfbout_spi_clk_gen_clk_wiz_0_0;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
@@ -59,8 +59,8 @@ module spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
 
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkf_buf
-       (.I(clkfbout_spi_clk_generator_clk_wiz_0_0),
-        .O(clkfbout_buf_spi_clk_generator_clk_wiz_0_0));
+       (.I(clkfbout_spi_clk_gen_clk_wiz_0_0),
+        .O(clkfbout_buf_spi_clk_gen_clk_wiz_0_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
@@ -69,10 +69,10 @@ module spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
        (.I(clk_in1),
-        .O(clk_in1_spi_clk_generator_clk_wiz_0_0));
+        .O(clk_in1_spi_clk_gen_clk_wiz_0_0));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
-       (.I(clk_out1_spi_clk_generator_clk_wiz_0_0),
+       (.I(clk_out1_spi_clk_gen_clk_wiz_0_0),
         .O(clk_out1));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
@@ -82,7 +82,7 @@ module spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(5.000000),
+    .CLKOUT0_DIVIDE_F(10.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
@@ -125,15 +125,15 @@ module spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
     .SS_MOD_PERIOD(10000),
     .STARTUP_WAIT("FALSE")) 
     mmcm_adv_inst
-       (.CLKFBIN(clkfbout_buf_spi_clk_generator_clk_wiz_0_0),
-        .CLKFBOUT(clkfbout_spi_clk_generator_clk_wiz_0_0),
+       (.CLKFBIN(clkfbout_buf_spi_clk_gen_clk_wiz_0_0),
+        .CLKFBOUT(clkfbout_spi_clk_gen_clk_wiz_0_0),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_spi_clk_generator_clk_wiz_0_0),
+        .CLKIN1(clk_in1_spi_clk_gen_clk_wiz_0_0),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_out1_spi_clk_generator_clk_wiz_0_0),
+        .CLKOUT0(clk_out1_spi_clk_gen_clk_wiz_0_0),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),

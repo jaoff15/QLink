@@ -39,7 +39,8 @@ end SPI_TX;
 
 architecture Behavioral of SPI_TX is
 
-    signal bitcnt  : integer range 0 to 33 := 0;
+    --signal bitcnt  : integer range 0 to 33 := 0;
+    signal bitcnt  : integer range 0 to 31 := 0;
     signal data    : std_logic_vector(31 downto 0);
     --signal data_in   : std_logic_vector(31 downto 0);
     signal running : std_logic := '0';
@@ -50,17 +51,19 @@ architecture Behavioral of SPI_TX is
 begin
 
 ADDR_O <= x"10";
-SCLK_O <= not CLK_I;
+
 
 data <= DATA_I;
 
 process(CLK_I)
 
-  variable nxt_bitcnt   : integer range 0 to 33;
+--  variable nxt_bitcnt   : integer range 0 to 33;
+  variable nxt_bitcnt   : integer range 0 to 31;
 --  variable nxt_tx_done  : std_logic;
   variable nxt_tx       : std_logic;
 --  variable nxt_subbitcnt : integer range 0 to 36 := bitcnt;
 begin
+  SCLK_O <= '0';
   if rising_edge(CLK_I) then
     if RESET_I = '1' then
       nxt_bitcnt  := 0;
@@ -77,20 +80,25 @@ begin
 --          run_tx        <= '1';
 --        end if;
 --      else 
-          if bitcnt < 33 then
+--          if bitcnt < 33 then
+          if bitcnt < 31 then
             nxt_bitcnt := bitcnt + 1;
           else
             nxt_bitcnt := 0;
           end if;
           
-          if bitcnt = 0 then
-            nxt_tx := '0'; -- start bit
-          elsif bitcnt < 33 then
-            nxt_tx := data(bitcnt-1);
-          else 
-            nxt_tx := '1'; -- stop bit
+--          if bitcnt = 0 then
+--            nxt_tx := '0'; -- start bit
+--          elsif bitcnt < 33 then
+--          elsif bitcnt < 31 then
+--            nxt_tx := data(bitcnt-1);
+            nxt_tx := data(bitcnt);
+--          else 
+--            nxt_tx := '1'; -- stop bit
 --            run_tx        <= '0';
-          end if; -- bitcnt=0
+--          end if; -- bitcnt=0
+
+         SCLK_O <= '1';
        end if; -- RESET
 --   end if; 
    bitcnt   <= nxt_bitcnt;
@@ -131,7 +139,7 @@ end process;
 --    end if; -- clk_uart'event
 --end process;
 
-
+--SCLK_O <= not CLK_I;
 
 --process(CLK_I)
 --variable nxt_active : std_logic          := active;
@@ -156,4 +164,5 @@ end process;
 
 
 end Behavioral;
+
 

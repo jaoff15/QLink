@@ -39,7 +39,8 @@ Port ( RESET_I   : in  STD_LOGIC := '0';
 end SPI_RX;
 
 architecture Behavioral of SPI_RX is
-    signal bitcnt        : integer range 0 to 33 := 0;
+--    signal bitcnt        : integer range 0 to 33 := 0;
+    signal bitcnt        : integer range 0 to 31 := 0;
     signal data          : std_logic_vector(31 downto 0) := (others => '0');
     
     signal data_o_signal : std_logic_vector(31 downto 0) := (others => '0');
@@ -52,7 +53,8 @@ ADDR_O <= x"10";
 
 
 process(SCLK_I)
-variable nxt_bitcnt : integer range 0 to 33          := bitcnt;
+--variable nxt_bitcnt : integer range 0 to 33          := bitcnt;
+variable nxt_bitcnt : integer range 0 to 31          := bitcnt;
 variable nxt_data   : std_logic_vector(31 downto 0)  := data;
 --variable mosi_in    : std_logic                      := MOSI_I;
 begin
@@ -69,17 +71,19 @@ begin
 --        else
 --          nxt_bitcnt := 0;
 --        end if;
-        if bitcnt=33 then
+--        if bitcnt=33 then
+        if bitcnt=31 then
           nxt_bitcnt:=0;
         else
           nxt_bitcnt:=bitcnt+1;
         end if; --bitcnt=9
         
-        if (bitcnt>0) and (bitcnt < 32) then
-          nxt_data(bitcnt-1):=MOSI_I;
+--        if (bitcnt>0) and (bitcnt < 32) then
+          nxt_data(bitcnt):=MOSI_I;
 --          nxt_data(nxt_bitcnt-1):=MOSI_I;
-        end if; -- subcnt=8
-        if (bitcnt=33) then   -- terminate mid stop-bitMOSI_I
+--        end if; -- subcnt=8
+--        if (bitcnt=33) then   -- terminate mid stop-bitMOSI_I
+        if (bitcnt=31) then   -- terminate mid stop-bitMOSI_I
 --          nxt_bitcnt:=0;
           WR_O          <= '1';
           data_o_signal <= data;

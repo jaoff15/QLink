@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Sat Apr 11 15:48:16 2020
+-- Date        : Mon Apr 13 11:30:25 2020
 -- Host        : JacobOffersen running 64-bit Ubuntu 19.10
 -- Command     : write_vhdl -force -mode funcsim -rename_top spi_clk_gen_clk_wiz_0_0 -prefix
---               spi_clk_gen_clk_wiz_0_0_ spi_clk_generator_clk_wiz_0_0_sim_netlist.vhdl
--- Design      : spi_clk_generator_clk_wiz_0_0
+--               spi_clk_gen_clk_wiz_0_0_ spi_clk_gen_clk_wiz_0_0_sim_netlist.vhdl
+-- Design      : spi_clk_gen_clk_wiz_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7s25ftgb196-1
@@ -14,18 +14,18 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz is
+entity spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz;
+end spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz;
 
-architecture STRUCTURE of spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz is
-  signal clk_in1_spi_clk_generator_clk_wiz_0_0 : STD_LOGIC;
-  signal clk_out1_spi_clk_generator_clk_wiz_0_0 : STD_LOGIC;
-  signal clkfbout_buf_spi_clk_generator_clk_wiz_0_0 : STD_LOGIC;
-  signal clkfbout_spi_clk_generator_clk_wiz_0_0 : STD_LOGIC;
+architecture STRUCTURE of spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz is
+  signal clk_in1_spi_clk_gen_clk_wiz_0_0 : STD_LOGIC;
+  signal clk_out1_spi_clk_gen_clk_wiz_0_0 : STD_LOGIC;
+  signal clkfbout_buf_spi_clk_gen_clk_wiz_0_0 : STD_LOGIC;
+  signal clkfbout_spi_clk_gen_clk_wiz_0_0 : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -57,8 +57,8 @@ architecture STRUCTURE of spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_
 begin
 clkf_buf: unisim.vcomponents.BUFG
      port map (
-      I => clkfbout_spi_clk_generator_clk_wiz_0_0,
-      O => clkfbout_buf_spi_clk_generator_clk_wiz_0_0
+      I => clkfbout_spi_clk_gen_clk_wiz_0_0,
+      O => clkfbout_buf_spi_clk_gen_clk_wiz_0_0
     );
 clkin1_ibufg: unisim.vcomponents.IBUF
     generic map(
@@ -66,11 +66,11 @@ clkin1_ibufg: unisim.vcomponents.IBUF
     )
         port map (
       I => clk_in1,
-      O => clk_in1_spi_clk_generator_clk_wiz_0_0
+      O => clk_in1_spi_clk_gen_clk_wiz_0_0
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_out1_spi_clk_generator_clk_wiz_0_0,
+      I => clk_out1_spi_clk_gen_clk_wiz_0_0,
       O => clk_out1
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
@@ -81,7 +81,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 5.000000,
+      CLKOUT0_DIVIDE_F => 10.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
@@ -125,15 +125,15 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       STARTUP_WAIT => false
     )
         port map (
-      CLKFBIN => clkfbout_buf_spi_clk_generator_clk_wiz_0_0,
-      CLKFBOUT => clkfbout_spi_clk_generator_clk_wiz_0_0,
+      CLKFBIN => clkfbout_buf_spi_clk_gen_clk_wiz_0_0,
+      CLKFBOUT => clkfbout_spi_clk_gen_clk_wiz_0_0,
       CLKFBOUTB => NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED,
       CLKFBSTOPPED => NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED,
-      CLKIN1 => clk_in1_spi_clk_generator_clk_wiz_0_0,
+      CLKIN1 => clk_in1_spi_clk_gen_clk_wiz_0_0,
       CLKIN2 => '0',
       CLKINSEL => '1',
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
-      CLKOUT0 => clk_out1_spi_clk_generator_clk_wiz_0_0,
+      CLKOUT0 => clk_out1_spi_clk_gen_clk_wiz_0_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
       CLKOUT1 => NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
@@ -175,7 +175,7 @@ end spi_clk_gen_clk_wiz_0_0;
 
 architecture STRUCTURE of spi_clk_gen_clk_wiz_0_0 is
 begin
-inst: entity work.spi_clk_gen_clk_wiz_0_0_spi_clk_generator_clk_wiz_0_0_clk_wiz
+inst: entity work.spi_clk_gen_clk_wiz_0_0_spi_clk_gen_clk_wiz_0_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1
