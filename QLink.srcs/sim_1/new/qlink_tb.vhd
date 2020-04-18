@@ -116,6 +116,7 @@ test_tx : process
   variable x :integer   := 0;
   variable done: boolean := false;
 begin
+    
    -- tx_start <= '0';
     wait for 10us;
   --  tx_start <= '1';

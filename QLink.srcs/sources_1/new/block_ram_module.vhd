@@ -34,20 +34,20 @@ architecture Behavioral of block_RAM_module is
     signal portB_0_addr, portB_1_addr : std_logic_vector(15 downto 0) := (others => '0');
 
     -- Data in
-    signal portA_0_din, portA_1_din  : std_logic_vector ( 31 downto 0 ) := (others => '0');
-    signal portB_0_din, portB_1_din  : std_logic_vector ( 31 downto 0 ) := (others => '0');
+    signal portA_0_din, portA_1_din   : std_logic_vector ( 31 downto 0 ) := (others => '0');
+    signal portB_0_din, portB_1_din   : std_logic_vector ( 31 downto 0 ) := (others => '0');
 
     -- Data out
-    signal portA_0_do, portA_1_do  : std_logic_vector ( 31 downto 0 ) := (others => '0');
-    signal portB_0_do, portB_1_do  : std_logic_vector ( 31 downto 0 ) := (others => '0');
+    signal portA_0_do, portA_1_do     : std_logic_vector ( 31 downto 0 ) := (others => '0');
+    signal portB_0_do, portB_1_do     : std_logic_vector ( 31 downto 0 ) := (others => '0');
 
     -- Enable
-    signal portA_0_en, portA_1_en  : std_logic := '0';
-    signal portB_0_en, portB_1_en  : std_logic := '0';
+    signal portA_0_en, portA_1_en     : std_logic := '0';
+    signal portB_0_en, portB_1_en     : std_logic := '0';
     
     -- Write enable
-    signal portA_0_we, portA_1_we  : std_logic_vector ( 3 downto 0 ) := (others => '0');
-    signal portB_0_we, portB_1_we  : std_logic_vector ( 7 downto 0 ) := (others => '0');
+    signal portA_0_we, portA_1_we     : std_logic_vector ( 3 downto 0 ) := (others => '0');
+    signal portB_0_we, portB_1_we     : std_logic_vector ( 7 downto 0 ) := (others => '0');
 
 begin
 
@@ -73,25 +73,13 @@ with ADDR_BA_I(7) select
 
 DATA_BB_O <= portB_0_do;
 
--- Write enable
-with ADDR_BA_I(7) select
-    portA_0_we <= (others => WR_A_I) when '0',
-                  (others => '0') when others;
-                  
-with ADDR_BA_I(7) select
-    portA_1_we <= (others => WR_A_I) when '1',
-                  (others => '0') when others;
-                  
-                  
---portA_0_we <= (others => WR_A_I);
+portA_0_we <= (others => WR_A_I);
 portB_1_we <= (others => WR_B_I);
---portB_1_we <= (others => '1');
+
 
 -- Enable
 portA_0_en <= '1';
 portA_1_en <= '1';
---portA_0_en <= not ADDR_BA_I(7);
---portA_1_en <=     ADDR_BA_I(7);
 portB_0_en <= '1';
 portB_1_en <= '1';
 

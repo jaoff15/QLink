@@ -23,25 +23,25 @@ entity receiver_top is
            SPI_SCLK_I  : in  std_logic
             );
 end receiver_top;
-
+ 
 architecture rtl of receiver_top is
 
 
 -- Define linkmaster component
 component QLinkMaster is
   Generic ( CLK_I_PERIOD : real range 2.0 to 64.0);
-  Port    ( RESET_I  : in STD_LOGIC;
-            CLK_I  : in STD_LOGIC;
-            RX_I     : in STD_LOGIC;
-            TX_O     : out STD_LOGIC;
-            CLK48_O  : out STD_LOGIC;
-            ADDR_B_O : out STD_LOGIC_VECTOR(7 downto 0);
-            DATA_B_O : out STD_LOGIC_VECTOR(31 downto 0);
-            DATA_B_I : in  STD_LOGIC_VECTOR(31 downto 0);
-            WR_O     : out STD_LOGIC;
-            RD_O     : out STD_LOGIC;
-            RESET_O  : out STD_LOGIC;
-            LED_O    : out STD_LOGIC );
+  Port    ( RESET_I      : in  STD_LOGIC;
+            CLK_I        : in  STD_LOGIC;
+            RX_I         : in  STD_LOGIC;
+            TX_O         : out STD_LOGIC;
+            CLK48_O      : out STD_LOGIC;
+            ADDR_B_O     : out STD_LOGIC_VECTOR(7 downto 0);
+            DATA_B_O     : out STD_LOGIC_VECTOR(31 downto 0);
+            DATA_B_I     : in  STD_LOGIC_VECTOR(31 downto 0);
+            WR_O         : out STD_LOGIC;
+            RD_O         : out STD_LOGIC;
+            RESET_O      : out STD_LOGIC;
+            LED_O        : out STD_LOGIC );
 end component;
 
 -- Define RAM component
@@ -58,18 +58,20 @@ end component;
 --end component;
 
 component block_RAM_module is
- Port ( CLK_I    : in  STD_LOGIC := '0';
-        RESET_I  : in  STD_LOGIC := '0';
+ Port ( CLK_I      : in  STD_LOGIC := '0';
+        RESET_I    : in  STD_LOGIC := '0';
         -- QLink <-> RAM
-        ADDR_BA_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
-        DATA_BA_I : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-        DATA_BA_O : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+        ADDR_BA_I  : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+        DATA_BA_I  : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+        DATA_BA_O  : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
         WR_A_I     : in  STD_LOGIC := '0';
-        -- MemCpy <-> RAM 
+        -- SPI <-> RAM 
+        -- SPI Tx
         ADDR1_BB_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
+        DATA_BB_O  : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+        -- SPI RX
         ADDR2_BB_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
         DATA_BB_I  : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
-        DATA_BB_O  : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
         WR_B_I     : in  STD_LOGIC := '0'
        );
 end component;
@@ -134,7 +136,7 @@ end component;
   
   
     -- Port B
-    -- MemCpy <-> RAM
+    -- SPI <-> RAM
     signal wr_B           : std_logic := '0';
     signal adr1_B, adr2_B : std_logic_vector(7 downto 0)  := (others => '0');
     signal data_B_I       : std_logic_vector(31 downto 0) := (others => '0');
@@ -142,9 +144,9 @@ end component;
   
     -- SPI
     signal clk_spi        : std_logic := '0';
-    signal spi_reset      : std_logic := '0';
+    --signal spi_reset      : std_logic := '0';
   
-    signal q              : std_logic_vector(22 downto 0) := (others => '0');
+    --signal q              : std_logic_vector(22 downto 0) := (others => '0');
   
 begin
 
@@ -169,38 +171,21 @@ QLINK1: QLinkMaster
 RAM0: block_RAM_module
 port map(   CLK_I      => clk48,
             RESET_I    => sys_reset,
-            -- Port A
+            -- Port A. Qlink <-> RAM
             ADDR_BA_I  => adr_A,
             DATA_BA_I  => data_A_I,
             DATA_BA_O  => data_A_O,
             WR_A_I     => wr_A,
-            -- Port B
-            ADDR1_BB_I  => adr1_B,
-            DATA_BB_O  => data_B_O,
             
-            ADDR2_BB_I  => adr2_B,
+            -- Port B. SPI <-> RAM
+            -- SPI TX
+            ADDR1_BB_I => adr1_B,
+            DATA_BB_O  => data_B_O,
+            -- SPI RX
+            ADDR2_BB_I => adr2_B,
             DATA_BB_I  => data_B_I,
             WR_B_I     => wr_B
             );
-
-
---MemCpy:  memory_copy_module 
---port map ( CLK_I    => clk48,
---           RESET_I  => sys_reset,
---           ADDR1_B_O => adr1_B,
---           ADDR2_B_O => adr2_B,
---           DATA_B_I => data_B_O,
---           DATA_B_O => data_B_I,
---           WR_O     => wr_B);
-
-
---clk_spi <= q(5);
---process (clk48)
---begin -- process
---if rising_edge(clk48) then
---    q <= q + 1;
---end if;
---end process;
 
 
 SpiClk: spi_clk_gen_wrapper 
@@ -208,9 +193,6 @@ port map(
     clk_in1_0   => CLK100_I,
     clk_out1_0  => clk_spi
   );
-
-
---clk_spi <= clk48;
 
 SpiTx:  SPI_TX 
 port map ( CLK_I    => clk_spi,

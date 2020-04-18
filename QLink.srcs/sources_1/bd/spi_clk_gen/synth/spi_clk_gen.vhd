@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
---Date        : Sat Apr 18 12:12:30 2020
+--Date        : Sat Apr 18 18:50:37 2020
 --Host        : JacobOffersen running 64-bit Ubuntu 19.10
 --Command     : generate_target spi_clk_gen.bd
 --Design      : spi_clk_gen
@@ -36,7 +36,7 @@ architecture STRUCTURE of spi_clk_gen is
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of clk_in1_0 : signal is "XIL_INTERFACENAME CLK.CLK_IN1_0, CLK_DOMAIN spi_clk_gen_clk_in1_0, FREQ_HZ 100000000, PHASE 0.000";
   attribute X_INTERFACE_INFO of clk_out1_0 : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_OUT1_0 CLK";
-  attribute X_INTERFACE_PARAMETER of clk_out1_0 : signal is "XIL_INTERFACENAME CLK.CLK_OUT1_0, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 100000000, PHASE 0.0";
+  attribute X_INTERFACE_PARAMETER of clk_out1_0 : signal is "XIL_INTERFACENAME CLK.CLK_OUT1_0, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 350000000, PHASE 0.0";
 begin
   clk_in1_0_1 <= clk_in1_0;
   clk_out1_0 <= clk_wiz_0_clk_out1;
