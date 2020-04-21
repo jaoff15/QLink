@@ -46,7 +46,7 @@ architecture Behavioral of SPI_RX is
 begin
 
 DATA_O <= data_o_signal;
-ADDR_O <= x"90";
+ADDR_O <= x"10";
 
 
 

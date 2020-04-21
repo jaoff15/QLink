@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
---Date        : Sat Apr 18 18:50:38 2020
+--Date        : Tue Apr 21 08:30:58 2020
 --Host        : JacobOffersen running 64-bit Ubuntu 19.10
 --Command     : generate_target spi_clk_gen_wrapper.bd
 --Design      : spi_clk_gen_wrapper
