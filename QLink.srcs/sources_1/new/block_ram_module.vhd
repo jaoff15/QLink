@@ -19,6 +19,7 @@ entity block_RAM_module is
           -- MemCpy <-> RAM 
            ADDR1_BB_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
            DATA_BB_I  : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
+           
            ADDR2_BB_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
            DATA_BB_O  : out STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
            WR_B_I     : in  STD_LOGIC := '0'

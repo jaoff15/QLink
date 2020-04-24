@@ -169,7 +169,7 @@ QLINK1: QLinkMaster
 
 
 RAM0: block_RAM_module
-port map(   CLK_I      => clk48,
+port map(   CLK_I      => clk_spi,
             RESET_I    => sys_reset,
             -- Port A. Qlink <-> RAM
             ADDR_BA_I  => adr_A,
@@ -190,14 +190,15 @@ port map(   CLK_I      => clk48,
 
 SpiClk: spi_clk_gen_wrapper 
 port map(
-    clk_in1_0   => CLK100_I,
+    clk_in1_0   => clk48,
     clk_out1_0  => clk_spi
   );
+--clk_spi <= CLK48;
 
-SpiTx:  SPI_TX 
+ SpiTx:  SPI_TX 
 port map ( CLK_I    => clk_spi,
            RESET_I  => sys_reset,
-           -- Qlink
+           -- RAM
            ADDR_O   => adr1_B,
            DATA_I   => data_B_O,
            -- SPI
@@ -207,7 +208,7 @@ port map ( CLK_I    => clk_spi,
            
 SpiRx:  SPI_RX 
 port map (RESET_I   => sys_reset,
-          -- QLink
+          -- RAM
           ADDR_O    => adr2_B,
           DATA_O    => data_B_I,
           WR_O      => wr_B,

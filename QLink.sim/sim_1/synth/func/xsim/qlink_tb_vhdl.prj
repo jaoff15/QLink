@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"qlink_tb_func_synth.vhd" \
+"../../../../../QLink.srcs/sim_1/new/qlink_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,6 +1,6 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 0d623742dc11498b8eb95836d15c0252 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot qlink_tb_behav xil_defaultlib.qlink_tb -log elaborate.log 
+Running: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 0d623742dc11498b8eb95836d15c0252 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot qlink_tb_behav xil_defaultlib.qlink_tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -19,18 +19,26 @@ Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
 Compiling package ieee.std_logic_textio
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
 Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=10.0...]
 Compiling architecture mmcme2_base_v of entity unisim.MMCME2_BASE [\MMCME2_BASE(clkfbout_mult_f=10....]
 Compiling architecture rtl of entity xil_defaultlib.mmcm48 [\mmcm48(clk_i_period=10.0)\]
 Compiling architecture rtl of entity xil_defaultlib.decode_serial [decode_serial_default]
 Compiling architecture rtl of entity xil_defaultlib.encode_serial [encode_serial_default]
 Compiling architecture rtl of entity xil_defaultlib.QLinkMaster [\QLinkMaster(clk_i_period=10.0)(...]
-Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(init_00="000...]
-Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(init_00="0000000000001...]
 Compiling architecture rb36_internal_vhdl_v of entity unisim.RB36_INTERNAL_VHDL [\RB36_INTERNAL_VHDL(init_a="0000...]
 Compiling architecture ramb36e1_v of entity unisim.RAMB36E1 [\RAMB36E1(read_width_a=36,read_w...]
 Compiling architecture behavioral of entity xil_defaultlib.block_RAM_module [block_ram_module_default]
-Compiling architecture behavioral of entity xil_defaultlib.memory_copy_module [memory_copy_module_default]
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.spi_clk_gen_clk_wiz_0_0_clk_wiz
+Compiling module xil_defaultlib.spi_clk_gen_clk_wiz_0_0
+Compiling architecture structure of entity xil_defaultlib.spi_clk_gen [spi_clk_gen_default]
+Compiling architecture structure of entity xil_defaultlib.spi_clk_gen_wrapper [spi_clk_gen_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.SPI_TX [spi_tx_default]
+Compiling architecture behavioral of entity xil_defaultlib.SPI_RX [spi_rx_default]
 Compiling architecture rtl of entity xil_defaultlib.receiver_top [receiver_top_default]
 Compiling architecture behavioral of entity xil_defaultlib.qlink_tb
 Built simulation snapshot qlink_tb_behav

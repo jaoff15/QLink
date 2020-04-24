@@ -1,0 +1,497 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 53390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 53390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 53702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 53702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 56265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 56265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 58827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 58827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 61390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 61390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 61702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 61702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 64265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 64265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 66827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 66827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 69390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 69390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 69702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 69702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 72265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 72265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 74827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 74827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 77390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 77390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 77702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 77702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 80265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 80265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 82827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 82827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 85390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 85390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 85702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 85702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 88265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 88265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 90827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 90827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 93390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 93390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 93702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 93702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 96265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 96265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 98827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 98827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 101390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 101390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 101702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 101702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 104265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 104265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 106827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 106827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 109390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 109390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 109702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 109702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 112265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 112265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 114827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 114827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 117390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 117390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 117702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 117702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 120265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 120265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 122827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 122827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 125390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 125390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 125702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 125702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 128265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 128265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 130827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 130827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 133390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 133390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 133702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 133702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 136265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 136265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 138827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 138827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 141390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 141390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 141702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 141702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 144265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 144265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 146827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 146827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 149390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 149390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 149702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 149702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM0:tdp:RAMB36E1_TDP_inst: at simulation time 152202.5 ns.
+ A read was performed on address 0200 (hex) of port B while a write was requested to the same address on port A.  The write will be successful however the read value on port B is unknown until the next CLKB cycle. 
+Time: 152202500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM0/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 152265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 152265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 154827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 154827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 157390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 157390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 157702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 157702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 160265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 160265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 162827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 162827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 165390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 165390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 165702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 165702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 168265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 168265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 170827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 170827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 173390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 173390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 173702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 173702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 176265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 176265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 178827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 178827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 181390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 181390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 181702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 181702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 184265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 184265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 186827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 186827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 189390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 189390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 189702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 189702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 192265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 192265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 194827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 194827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 197390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 197390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 197702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 197702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 200265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 200265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 202827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 202827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 205390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 205390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 205702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 205702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 208265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 208265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 210827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 210827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 213390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 213390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 213702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 213702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 216265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 216265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 218827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 218827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 221390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 221390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 221702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 221702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 224265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 224265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 226827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 226827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 229390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 229390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 229702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 229702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 232265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 232265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 234827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 234827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 237390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 237390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 237702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 237702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 240265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 240265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 242827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 242827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 245390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 245390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 245702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 245702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 248265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 248265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 250827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 250827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 253390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 253390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 253702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 253702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 256265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 256265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 258827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 258827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 261390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 261390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 261702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 261702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 264265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 264265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 266827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 266827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 269390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 269390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 269702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 269702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 272265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 272265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 274827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 274827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 277390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 277390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 277702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 277702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 280265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 280265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 282827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 282827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 285390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 285390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 285702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 285702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 288265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 288265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 290827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 290827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 293390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 293390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 293702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 293702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 296265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 296265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 298827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 298827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 301390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 301390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 301702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 301702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 304265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 304265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 306827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 306827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 309390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 309390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 309702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 309702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 312265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 312265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 314827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 314827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 317390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 317390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 317702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 317702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 320265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 320265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 322827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 322827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 325390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 325390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 325702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 325702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 328265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 328265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 330827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 330827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 333390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 333390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 333702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 333702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 336265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 336265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 338827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 338827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 341390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 341390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 341702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 341702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 344265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 344265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 346827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 346827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 349390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 349390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 349702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 349702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 352265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 352265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 354827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 354827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 357390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 357390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 357702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 357702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 360265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 360265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 362827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 362827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 365390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 365390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 365702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 365702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 368265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 368265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 370827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 370827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 373390 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 373390 ns  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 373702.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 373702500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 376265 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 376265 ns  Iteration: 11  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd
+Error:  Memory Collision Error on RAMB36E1 ::qlink_tb:receiver_top0:RAM0:UNISIM_RAM1:tdp:RAMB36E1_TDP_inst: at simulation time 378827.5 ns.
+ A read was performed on address 0200 (hex) of port A while a write was requested to the same address on port B.  The write will be successful however the read value on port A is unknown until the next CLKA cycle. 
+Time: 378827500 ps  Iteration: 6  Process: /qlink_tb/receiver_top0/RAM0/UNISIM_RAM1/tdp/RAMB36E1_TDP_inst/prcs_clk  File: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/data/vhdl/src/unisims/primitive/RAMB36E1.vhd

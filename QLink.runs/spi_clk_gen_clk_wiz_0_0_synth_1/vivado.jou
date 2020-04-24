@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Apr 24 09:01:52 2020
+# Process ID: 5250
+# Current directory: /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/spi_clk_gen_clk_wiz_0_0_synth_1
+# Command line: vivado -log spi_clk_gen_clk_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_clk_gen_clk_wiz_0_0.tcl
+# Log file: /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/spi_clk_gen_clk_wiz_0_0_synth_1/spi_clk_gen_clk_wiz_0_0.vds
+# Journal file: /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/spi_clk_gen_clk_wiz_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source spi_clk_gen_clk_wiz_0_0.tcl -notrace

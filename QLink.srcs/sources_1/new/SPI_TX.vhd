@@ -53,9 +53,10 @@ SCLK_O  <= not CLK_I and sclk_active;
 process(CLK_I)
   variable nxt_bitcnt   : integer range 0 to 31;
   variable nxt_tx       : std_logic;
+  variable nxt_data     : std_logic_vector(31 downto 0) := data;
 begin
   if rising_edge(CLK_I) then
-    data        <= data;
+--    data        <= data;
     sclk_active <= sclk_active;
     if RESET_I = '1' then
       nxt_bitcnt  := 0;
@@ -67,12 +68,15 @@ begin
       else
         nxt_bitcnt := 0;
         -- Sample data from RAM
-        data <= DATA_I;
+--        data <= DATA_I;
+        nxt_data := DATA_I;
       end if;
       -- Transmit current bit
       nxt_tx      := data(bitcnt);
       sclk_active <= '1';
      end if;
+   
+   data     <= nxt_data;
    bitcnt   <= nxt_bitcnt;
    MOSI_O   <= nxt_tx;
   end if;

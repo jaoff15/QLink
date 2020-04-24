@@ -42,10 +42,11 @@ architecture Behavioral of SPI_RX is
     signal bitcnt        : integer range 0 to 31 := 0;
     signal data          : std_logic_vector(31 downto 0) := (others => '0');
     
-    signal data_o_signal : std_logic_vector(31 downto 0) := (others => '0');
+   -- signal data_o_signal : std_logic_vector(31 downto 0) := (others => '0');
 begin
 
-DATA_O <= data_o_signal;
+--DATA_O <= data_o_signal;
+DATA_O <= data;
 ADDR_O <= x"10";
 
 
@@ -53,10 +54,11 @@ ADDR_O <= x"10";
 process(SCLK_I)
 variable nxt_bitcnt : integer range 0 to 31          := bitcnt;
 variable nxt_data   : std_logic_vector(31 downto 0)  := data;
+variable nxt_wr     : std_logic := '0';
 begin
     if rising_edge(SCLK_I) then
-      data_o_signal <= data_o_signal;      
-      WR_O          <= '0';
+--      data_o_signal <= data_o_signal;      
+--      WR_O          <= '0';
       if RESET_I='1' then
         nxt_bitcnt  := 0; 
         nxt_data    := (others => '0');
@@ -68,16 +70,18 @@ begin
             nxt_bitcnt := 0;
             -- Everything has been received. 
             -- Write data to output and set WE high
-            WR_O          <= '1';
-            data_o_signal <= data;
+--            WR_O          <= '1';
+            nxt_wr := '1';
+           -- data_o_signal <= data;
         end if;
 
         -- Read in bit
         nxt_data(bitcnt) := MOSI_I;
 
       end if;
-        data   <= nxt_data;
-        bitcnt <= nxt_bitcnt;
+      WR_O   <= nxt_wr;
+      data   <= nxt_data;
+      bitcnt <= nxt_bitcnt;
     end if;
 end process;
 

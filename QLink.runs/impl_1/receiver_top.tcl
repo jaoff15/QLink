@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7s25ftgb196-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -73,9 +72,17 @@ set rc [catch {
   set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.xpr [current_project]
   set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/receiver_top.dcp
+  set_msg_config -source 4 -id {BD 41-1661} -limit 0
+  set_param project.isImplRun true
+  add_files /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/spi_clk_gen.bd
+  set_param project.isImplRun false
   read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
+  set_param project.isImplRun true
   link_design -top receiver_top -part xc7s25ftgb196-1
+  set_param project.isImplRun false
+  write_hwdef -force -file receiver_top.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -154,8 +161,10 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_CDC [current_project]
   catch { write_mem_info -force receiver_top.mmi }
   write_bitstream -force receiver_top.bit 
+  catch { write_sysdef -hwdef receiver_top.hwdef -bitfile receiver_top.bit -meminfo receiver_top.mmi -file receiver_top.sysdef }
   catch {write_debug_probes -quiet -force receiver_top}
   catch {file copy -force receiver_top.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Thu Apr  9 14:24:34 2020
+| Date         : Fri Apr 24 09:03:41 2020
 | Host         : JacobOffersen running 64-bit Ubuntu 19.10
 | Command      : report_control_sets -verbose -file receiver_top_control_sets_placed.rpt
 | Design       : receiver_top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    31 |
-| Unused register locations in slices containing registers |    72 |
+| Number of unique control sets                            |    68 |
+| Unused register locations in slices containing registers |   294 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,12 +34,13 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |            8 |
-|      8 |           14 |
-|     10 |            1 |
+|      2 |           42 |
+|      4 |            1 |
+|      8 |            4 |
+|     10 |            3 |
 |     12 |            1 |
-|     14 |            3 |
-|    16+ |            4 |
+|     14 |            4 |
+|    16+ |           13 |
 +--------+--------------+
 
 
@@ -49,52 +50,89 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              80 |           12 |
+| No           | No                    | No                     |              20 |            8 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              96 |           15 |
-| Yes          | No                    | No                     |              14 |            3 |
+| No           | Yes                   | No                     |             104 |           18 |
+| Yes          | No                    | No                     |              78 |           11 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             258 |           52 |
+| Yes          | Yes                   | No                     |             400 |          107 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
-| Clock Signal |                Enable Signal                |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
-+--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[7]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[6]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[5]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[4]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[3]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[2]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[1]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  | QLINK1/DECODE/p_0_in[0]                     | QLINK1/sys_reset                       |                1 |              2 |
-|  clk48_BUFG  |                                             | QLINK1/DECODE/subcnt[3]_i_1_n_0        |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/nxt_bitcnt[3]_i_2__0_n_0      | QLINK1/DECODE/nxt_bitcnt[3]_i_1_n_0    |                2 |              8 |
-|  clk48_BUFG  | QLINK1/ENCODE/sel                           | QLINK1/ENCODE/subcnt[3]_i_1__0_n_0     |                1 |              8 |
-|  clk48_BUFG  | QLINK1/ENCODE/nxt_bitcnt                    | QLINK1/ENCODE/nxt_bitcnt[3]_i_1__0_n_0 |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/adr_reg[4][1]                 | QLINK1/sys_reset                       |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/adr_reg[4][0]                 | QLINK1/sys_reset                       |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[7]                          | QLINK1/sys_reset                       |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[0]                          | QLINK1/sys_reset                       |                2 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[1]                          | QLINK1/sys_reset                       |                3 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[2]                          | QLINK1/sys_reset                       |                2 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[3]                          | QLINK1/sys_reset                       |                2 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[4]                          | QLINK1/sys_reset                       |                1 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[5]                          | QLINK1/sys_reset                       |                2 |              8 |
-|  clk48_BUFG  | QLINK1/DECODE/E[6]                          | QLINK1/sys_reset                       |                3 |              8 |
-|  clk48_BUFG  | QLINK1/ENCODE/nxt_char_cnt_reg[0][0]        | QLINK1/sys_reset                       |                2 |             10 |
-|  clk48_BUFG  | QLINK1/sel                                  | QLINK1/sys_reset                       |                1 |             12 |
-|  clk48_BUFG  | QLINK1/ENCODE/E[0]                          |                                        |                3 |             14 |
-|  clk48_BUFG  | QLINK1/enc_wr                               | QLINK1/sys_reset                       |                2 |             14 |
-|  clk48_BUFG  |                                             |                                        |                4 |             14 |
-|  clk48_BUFG  | QLINK1/DECODE/FSM_onehot_rx_state_reg[0][0] | QLINK1/sys_reset                       |                9 |             38 |
-|  clk48_BUFG  | QLINK1/nxt_timestamp                        | QLINK1/sys_reset                       |                8 |             64 |
-| ~clk48_BUFG  |                                             |                                        |                8 |             66 |
-|  clk48_BUFG  |                                             | QLINK1/sys_reset                       |               14 |             88 |
-+--------------+---------------------------------------------+----------------------------------------+------------------+----------------+
++-----------------------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+|                  Clock Signal                 |                Enable Signal                |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++-----------------------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[9]_i_1_n_0                   | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[29]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[2]_i_1_n_0                   | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[30]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[31]_i_1__0_n_0               | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[3]_i_1_n_0                   | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[4]_i_1__0_n_0                | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[5]_i_1__0_n_0                | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[6]_i_1__0_n_0                | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[7]_i_1_n_0                   | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[8]_i_1_n_0                   | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[28]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         |                                             |                                        |                1 |              2 |
+|  SpiClk/spi_clk_gen_i/clk_wiz_0/inst/clk_out1 |                                             | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[6]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[5]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[4]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[3]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[2]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[1]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[0]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[18]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/p_0_in[7]                     | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[11]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[0]_i_1__0_n_0                | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[10]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[12]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[13]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[14]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[15]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[16]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[17]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[27]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[19]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[1]_i_1__0_n_0                | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[20]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[21]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[22]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[23]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[24]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[25]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SPI_SCLK_I_IBUF_BUFG                         | SpiRx/nxt_data[26]_i_1_n_0                  | QLINK1/RESET_O                         |                1 |              2 |
+|  SpiClk/spi_clk_gen_i/clk_wiz_0/inst/clk_out1 |                                             |                                        |                2 |              4 |
+|  CLK48_O_BUFG                                 | QLINK1/ENCODE/nxt_bitcnt                    | QLINK1/ENCODE/nxt_bitcnt[3]_i_1__0_n_0 |                1 |              8 |
+|  CLK48_O_BUFG                                 | QLINK1/ENCODE/sel                           | QLINK1/ENCODE/subcnt[3]_i_1__0_n_0     |                2 |              8 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/nxt_bitcnt                    | QLINK1/DECODE/nxt_bitcnt[3]_i_1_n_0    |                1 |              8 |
+|  CLK48_O_BUFG                                 |                                             | QLINK1/DECODE/subcnt[3]_i_1_n_0        |                1 |              8 |
+|  CLK48_O_BUFG                                 | QLINK1/ENCODE/nxt_char_cnt_reg[0][0]        | QLINK1/RESET_O                         |                2 |             10 |
+|  SpiClk/spi_clk_gen_i/clk_wiz_0/inst/clk_out1 |                                             | SpiTx/bitcnt[4]_i_1_n_0                |                2 |             10 |
+|  SPI_SCLK_I_IBUF_BUFG                         |                                             | SpiRx/bitcnt[4]_i_1__0_n_0             |                2 |             10 |
+|  CLK48_O_BUFG                                 | QLINK1/sel                                  | QLINK1/RESET_O                         |                1 |             12 |
+|  CLK48_O_BUFG                                 | QLINK1/ENCODE/E[0]                          |                                        |                4 |             14 |
+|  CLK48_O_BUFG                                 | QLINK1/enc_wr                               | QLINK1/RESET_O                         |                1 |             14 |
+|  CLK48_O_BUFG                                 |                                             |                                        |                5 |             14 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/adr_reg[7]_0[1]               | QLINK1/RESET_O                         |                3 |             14 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/adr_reg[7]_0[0]               | QLINK1/RESET_O                         |                4 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[0]                          | QLINK1/RESET_O                         |                6 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[1]                          | QLINK1/RESET_O                         |                4 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[2]                          | QLINK1/RESET_O                         |                4 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[7]                          | QLINK1/RESET_O                         |                2 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[6]                          | QLINK1/RESET_O                         |                3 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[5]                          | QLINK1/RESET_O                         |                4 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[4]                          | QLINK1/RESET_O                         |                5 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/E[3]                          | QLINK1/RESET_O                         |                6 |             16 |
+|  CLK48_O_BUFG                                 | QLINK1/DECODE/FSM_onehot_rx_state_reg[0][0] | QLINK1/RESET_O                         |                8 |             38 |
+|  CLK48_O_BUFG                                 | QLINK1/nxt_timestamp                        | QLINK1/RESET_O                         |               10 |             64 |
+|  SpiClk/spi_clk_gen_i/clk_wiz_0/inst/clk_out1 | SpiTx/nxt_data                              |                                        |                7 |             64 |
+|  CLK48_O_BUFG                                 |                                             | QLINK1/RESET_O                         |               12 |             74 |
++-----------------------------------------------+---------------------------------------------+----------------------------------------+------------------+----------------+
 
 

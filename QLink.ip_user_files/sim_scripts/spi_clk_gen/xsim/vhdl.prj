@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/spi_clk_gen/sim/spi_clk_gen.vhd" \
+
+nosort

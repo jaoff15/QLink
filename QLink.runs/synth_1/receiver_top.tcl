@@ -17,27 +17,36 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7s25ftgb196-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/wt [current_project]
 set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/memory_copy_module.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd
   /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd
 }
+add_files /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/spi_clk_gen.bd
+set_property used_in_implementation false [get_files -all /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/spi_clk_gen_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -49,6 +58,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc
 set_property used_in_implementation false [get_files /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 

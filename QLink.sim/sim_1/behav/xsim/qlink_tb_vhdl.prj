@@ -1,12 +1,15 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../QLink.ip_user_files/bd/spi_clk_gen/sim/spi_clk_gen.vhd" \
+"../../../../QLink.srcs/sources_1/new/SPI_RX.vhd" \
+"../../../../QLink.srcs/sources_1/new/SPI_TX.vhd" \
 "../../../../QLink.srcs/sources_1/new/block_ram_module.vhd" \
 "../../../../QLink.srcs/sources_1/imports/QLink_2020/QLINK/decode_serial.vhd" \
 "../../../../QLink.srcs/sources_1/imports/QLink_2020/QLINK/encode_serial.vhd" \
-"../../../../QLink.srcs/sources_1/new/memory_copy_module.vhd" \
 "../../../../QLink.srcs/sources_1/imports/QLink_2020/QLINK/mmcm48.vhd" \
 "../../../../QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd" \
 "../../../../QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd" \
+"../../../../QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd" \
 "../../../../QLink.srcs/sim_1/new/qlink_tb.vhd" \
 
 # Do not sort compile order

@@ -1,0 +1,12 @@
+
+{ 
+    crc :  8154876893986870804  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 0d623742dc11498b8eb95836d15c0252 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot qlink_tb_func_synth xil_defaultlib.qlink_tb xil_defaultlib.glbl" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:07:38" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/qlink_tb_func_synth/xsimk\"   \"xsim.dir/qlink_tb_func_synth/obj/xsim_0.lnx64.o\" \"xsim.dir/qlink_tb_func_synth/obj/xsim_1.lnx64.o\" \"xsim.dir/qlink_tb_func_synth/obj/xsim_2.lnx64.o\" \"xsim.dir/qlink_tb_func_synth/obj/xsim_3.lnx64.o\" \"xsim.dir/qlink_tb_func_synth/obj/xsim_4.lnx64.o\" \"/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
