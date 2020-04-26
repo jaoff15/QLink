@@ -5,9 +5,5 @@ INFO: [VRFC 10-307] analyzing entity block_RAM_module
 INFO: [VRFC 10-307] analyzing entity decode_serial
 INFO: [VRFC 10-307] analyzing entity encode_serial
 INFO: [VRFC 10-307] analyzing entity mmcm48
-INFO: [VRFC 10-307] analyzing entity \spi_clk_gen_clk_wiz_0_0__spi_clk_gen_clk_wiz_0_0_clk_wiz\
 INFO: [VRFC 10-307] analyzing entity QLinkMaster
-INFO: [VRFC 10-307] analyzing entity spi_clk_gen_clk_wiz_0_0
-INFO: [VRFC 10-307] analyzing entity spi_clk_gen
-INFO: [VRFC 10-307] analyzing entity spi_clk_gen_wrapper
 INFO: [VRFC 10-307] analyzing entity receiver_top

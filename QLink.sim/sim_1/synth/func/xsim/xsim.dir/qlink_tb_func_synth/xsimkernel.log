@@ -1,7 +1,7 @@
-Running: xsim.dir/qlink_tb_func_synth/xsimk -simmode gui -wdb qlink_tb_func_synth.wdb -simrunnum 0 -socket 34491
+Running: xsim.dir/qlink_tb_func_synth/xsimk -simmode gui -wdb qlink_tb_func_synth.wdb -simrunnum 0 -socket 55593
 Design successfully loaded
-Design Loading Memory Usage: 38536 KB (Peak: 38544 KB)
-Design Loading CPU Usage: 30 ms
+Design Loading Memory Usage: 37988 KB (Peak: 37996 KB)
+Design Loading CPU Usage: 50 ms
 Simulation completed
-Simulation Memory Usage: 128472 KB (Peak: 185808 KB)
-Simulation CPU Usage: 9550 ms
+Simulation Memory Usage: 127924 KB (Peak: 185260 KB)
+Simulation CPU Usage: 4390 ms

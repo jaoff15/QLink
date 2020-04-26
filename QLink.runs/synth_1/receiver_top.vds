@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr 24 09:02:02 2020
-# Process ID: 5338
+# Start of session at: Sun Apr 26 14:48:04 2020
+# Process ID: 2702
 # Current directory: /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1
 # Command line: vivado -log receiver_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source receiver_top.tcl
 # Log file: /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/receiver_top.vds
@@ -18,13 +18,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s25'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5350 
+INFO: Helper process launched with PID 2720 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.836 ; gain = 84.887 ; free physical = 9393 ; free virtual = 14376
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 84.887 ; free physical = 7802 ; free virtual = 13167
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'receiver_top' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:27]
 	Parameter CLK_I_PERIOD bound to: 10.000000 - type: float 
-INFO: [Synth 8-3491] module 'QLinkMaster' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:54' bound to instance 'QLINK1' of component 'QLinkMaster' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:155]
+INFO: [Synth 8-3491] module 'QLinkMaster' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:54' bound to instance 'QLINK1' of component 'QLinkMaster' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:156]
 INFO: [Synth 8-638] synthesizing module 'QLinkMaster' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:72]
 	Parameter CLK_I_PERIOD bound to: 10.000000 - type: float 
 	Parameter BLINK_SEQUENCE bound to: 230'b10111011101110101011101110101010101110101011101110101110100010101011101011101011101110101010101011101000101011101110101011101010101011101010111010101110001110111011101110111010111010111011101010111010111010111010111011101110101000 
@@ -116,9 +116,9 @@ INFO: [Synth 8-4471] merging register 'char_cnt_reg[4:0]' into 'nxt_char_cnt_reg
 WARNING: [Synth 8-6014] Unused sequential element enc_data_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:242]
 WARNING: [Synth 8-6014] Unused sequential element char_cnt_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:451]
 INFO: [Synth 8-256] done synthesizing module 'QLinkMaster' (4#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/QLINK/qlinkmaster.vhd:72]
-INFO: [Synth 8-3491] module 'block_RAM_module' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:11' bound to instance 'RAM0' of component 'block_RAM_module' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:171]
-INFO: [Synth 8-638] synthesizing module 'block_RAM_module' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:30]
-INFO: [Synth 8-226] default block is never used [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:71]
+INFO: [Synth 8-3491] module 'block_RAM_module' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:11' bound to instance 'RAM0' of component 'block_RAM_module' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:172]
+INFO: [Synth 8-638] synthesizing module 'block_RAM_module' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:31]
+INFO: [Synth 8-226] default block is never used [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:72]
 	Parameter DOA_REG bound to: 0 - type: integer 
 	Parameter DOB_REG bound to: 0 - type: integer 
 	Parameter EN_ECC_READ bound to: 0 - type: bool 
@@ -294,7 +294,7 @@ INFO: [Synth 8-226] default block is never used [/home/jacoboffersen/advanced_pr
 	Parameter WRITE_MODE_B bound to: WRITE_FIRST - type: string 
 	Parameter WRITE_WIDTH_A bound to: 36 - type: integer 
 	Parameter WRITE_WIDTH_B bound to: 36 - type: integer 
-INFO: [Synth 8-113] binding component instance 'UNISIM_RAM0' to cell 'RAMB36E1' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:90]
+INFO: [Synth 8-113] binding component instance 'UNISIM_RAM0' to cell 'RAMB36E1' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:91]
 	Parameter DOA_REG bound to: 0 - type: integer 
 	Parameter DOB_REG bound to: 0 - type: integer 
 	Parameter EN_ECC_READ bound to: 0 - type: bool 
@@ -470,34 +470,55 @@ INFO: [Synth 8-113] binding component instance 'UNISIM_RAM0' to cell 'RAMB36E1' 
 	Parameter WRITE_MODE_B bound to: WRITE_FIRST - type: string 
 	Parameter WRITE_WIDTH_A bound to: 36 - type: integer 
 	Parameter WRITE_WIDTH_B bound to: 36 - type: integer 
-INFO: [Synth 8-113] binding component instance 'UNISIM_RAM1' to cell 'RAMB36E1' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:323]
-INFO: [Synth 8-256] done synthesizing module 'block_RAM_module' (5#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:30]
-INFO: [Synth 8-3491] module 'spi_clk_gen_wrapper' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd:14' bound to instance 'SpiClk' of component 'spi_clk_gen_wrapper' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:191]
+INFO: [Synth 8-113] binding component instance 'UNISIM_RAM1' to cell 'RAMB36E1' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:324]
+INFO: [Synth 8-256] done synthesizing module 'block_RAM_module' (5#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/block_ram_module.vhd:31]
+INFO: [Synth 8-3491] module 'spi_clk_gen_wrapper' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd:14' bound to instance 'SpiClk' of component 'spi_clk_gen_wrapper' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:193]
 INFO: [Synth 8-638] synthesizing module 'spi_clk_gen_wrapper' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd:21]
 INFO: [Synth 8-3491] module 'spi_clk_gen' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/synth/spi_clk_gen.vhd:14' bound to instance 'spi_clk_gen_i' of component 'spi_clk_gen' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd:29]
 INFO: [Synth 8-638] synthesizing module 'spi_clk_gen' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/synth/spi_clk_gen.vhd:25]
-INFO: [Synth 8-3491] module 'spi_clk_gen_clk_wiz_0_0' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/.Xil/Vivado-5338-JacobOffersen/realtime/spi_clk_gen_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'spi_clk_gen_clk_wiz_0_0' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/synth/spi_clk_gen.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'spi_clk_gen_clk_wiz_0_0' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/.Xil/Vivado-5338-JacobOffersen/realtime/spi_clk_gen_clk_wiz_0_0_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'spi_clk_gen_clk_wiz_0_0' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/.Xil/Vivado-2702-JacobOffersen/realtime/spi_clk_gen_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'spi_clk_gen_clk_wiz_0_0' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/synth/spi_clk_gen.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'spi_clk_gen_clk_wiz_0_0' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/.Xil/Vivado-2702-JacobOffersen/realtime/spi_clk_gen_clk_wiz_0_0_stub.vhdl:13]
 INFO: [Synth 8-256] done synthesizing module 'spi_clk_gen' (6#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/synth/spi_clk_gen.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'spi_clk_gen_wrapper' (7#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/hdl/spi_clk_gen_wrapper.vhd:21]
-INFO: [Synth 8-3491] module 'SPI_TX' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:28' bound to instance 'SpiTx' of component 'SPI_TX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:198]
-INFO: [Synth 8-638] synthesizing module 'SPI_TX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:40]
-WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:53]
-WARNING: [Synth 8-6014] Unused sequential element nxt_bitcnt_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:62]
-WARNING: [Synth 8-6014] Unused sequential element nxt_tx_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:63]
-INFO: [Synth 8-4471] merging register 'data_reg[31:0]' into 'nxt_data_reg[31:0]' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:56]
-WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:56]
-INFO: [Synth 8-256] done synthesizing module 'SPI_TX' (8#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:40]
-INFO: [Synth 8-3491] module 'SPI_RX' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:29' bound to instance 'SpiRx' of component 'SPI_RX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:209]
-INFO: [Synth 8-638] synthesizing module 'SPI_RX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:41]
-WARNING: [Synth 8-614] signal 'bitcnt' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:54]
-WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:54]
-WARNING: [Synth 8-6014] Unused sequential element nxt_bitcnt_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:63]
-INFO: [Synth 8-4471] merging register 'WR_O_reg' into 'nxt_wr_reg' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:82]
-INFO: [Synth 8-4471] merging register 'data_reg[31:0]' into 'nxt_data_reg[31:0]' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:49]
-WARNING: [Synth 8-6014] Unused sequential element WR_O_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:82]
-WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:49]
-INFO: [Synth 8-256] done synthesizing module 'SPI_RX' (9#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:41]
+INFO: [Synth 8-3491] module 'SPI_TX' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:29' bound to instance 'SpiTx' of component 'SPI_TX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:200]
+INFO: [Synth 8-638] synthesizing module 'SPI_TX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:41]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:93]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'ODDR_MOSI' to cell 'ODDR' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:123]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'ODDR_SCLK' to cell 'ODDR' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:138]
+WARNING: [Synth 8-6014] Unused sequential element nxt_bitcnt_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:102]
+WARNING: [Synth 8-6014] Unused sequential element nxt_d1_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:103]
+WARNING: [Synth 8-6014] Unused sequential element nxt_d2_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:104]
+INFO: [Synth 8-4471] merging register 'data_reg[31:0]' into 'nxt_data_reg[31:0]' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:96]
+WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:96]
+INFO: [Synth 8-256] done synthesizing module 'SPI_TX' (8#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_TX.vhd:41]
+INFO: [Synth 8-3491] module 'SPI_RX' declared at '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:30' bound to instance 'SpiRx' of component 'SPI_RX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:211]
+INFO: [Synth 8-638] synthesizing module 'SPI_RX' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:42]
+WARNING: [Synth 8-614] signal 'bitcnt' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:95]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:95]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'IDDR_MOSI' to cell 'IDDR' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:122]
+WARNING: [Synth 8-6014] Unused sequential element nxt_wr_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:102]
+WARNING: [Synth 8-6014] Unused sequential element nxt_bitcnt_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:104]
+INFO: [Synth 8-4471] merging register 'data_reg[31:0]' into 'nxt_data_reg[31:0]' [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:54]
+WARNING: [Synth 8-6014] Unused sequential element data_reg was removed.  [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'SPI_RX' (9#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/new/SPI_RX.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'receiver_top' (10#1) [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/imports/QLink_2020/receiver_top.vhd:27]
 WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[7] driven by constant 0
 WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[6] driven by constant 0
@@ -511,7 +532,7 @@ WARNING: [Synth 8-3331] design block_RAM_module has unconnected port RESET_I
 WARNING: [Synth 8-3331] design block_RAM_module has unconnected port ADDR1_BB_I[7]
 WARNING: [Synth 8-3331] design block_RAM_module has unconnected port ADDR2_BB_I[7]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.461 ; gain = 154.512 ; free physical = 9387 ; free virtual = 14372
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.457 ; gain = 154.512 ; free physical = 7796 ; free virtual = 13162
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -524,12 +545,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.461 ; gain = 154.512 ; free physical = 9389 ; free virtual = 14374
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.457 ; gain = 154.512 ; free physical = 7799 ; free virtual = 13165
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.461 ; gain = 154.512 ; free physical = 9389 ; free virtual = 14374
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1392.457 ; gain = 154.512 ; free physical = 7799 ; free virtual = 13165
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7s25ftgb196-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -539,6 +560,7 @@ Initializing timing engine
 Parsing XDC File [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_in_context.xdc] for cell 'SpiClk/spi_clk_gen_i/clk_wiz_0'
 Finished Parsing XDC File [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_in_context.xdc] for cell 'SpiClk/spi_clk_gen_i/clk_wiz_0'
 Parsing XDC File [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc]
+WARNING: [Constraints 18-619] A clock with name 'CLK100_I' already exists, overwriting the previous clock with the same name. [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc:25]
 WARNING: [Vivado 12-507] No nets matched 'CLK100_I_IBUF'. [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc:26]
 WARNING: [Vivado 12-507] No nets matched 'SPI_SCLK_I_IBUF'. [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc:28]
 Finished Parsing XDC File [/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/constrs_1/imports/QLink_2020/constraints_copy.xdc]
@@ -554,24 +576,26 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1676.461 ; gain = 0.000 ; free physical = 9008 ; free virtual = 14042
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1682.457 ; gain = 0.000 ; free physical = 7601 ; free virtual = 12962
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 9052 ; free virtual = 14091
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7679 ; free virtual = 13040
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s25ftgb196-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 9052 ; free virtual = 14091
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7679 ; free virtual = 13040
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100_I. (constraint file  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for CLK100_I. (constraint file  /home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.srcs/sources_1/bd/spi_clk_gen/ip/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0/spi_clk_gen_clk_wiz_0_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for SpiClk/spi_clk_gen_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for SpiClk/spi_clk_gen_i/clk_wiz_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 9055 ; free virtual = 14093
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7681 ; free virtual = 13042
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "nxt_strobe" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nxt_bitcnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -660,7 +684,7 @@ INFO: [Synth 8-5544] ROM "y" won't be mapped to Block RAM because address size (
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'one-hot' in module 'QLinkMaster'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 9046 ; free virtual = 14085
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7672 ; free virtual = 13034
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -674,7 +698,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
 	   2 Input      5 Bit       Adders := 5     
 	   2 Input      4 Bit       Adders := 4     
 +---Registers : 
@@ -683,7 +707,7 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 3     
 	                4 Bit    Registers := 4     
-	                1 Bit    Registers := 16    
+	                1 Bit    Registers := 17    
 +---Muxes : 
 	  19 Input     32 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 1     
@@ -692,8 +716,9 @@ Detailed RTL Component Info :
 	   5 Input     19 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 3     
 	  19 Input      8 Bit        Muxes := 2     
-	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 21    
 	   5 Input      1 Bit        Muxes := 3     
 	  19 Input      1 Bit        Muxes := 3     
@@ -759,22 +784,26 @@ Detailed RTL Component Info :
 Module SPI_TX 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input      6 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
 Module SPI_RX 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input      6 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -801,12 +830,15 @@ WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[3] driven by constan
 WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[2] driven by constant 0
 WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[1] driven by constant 0
 WARNING: [Synth 8-3917] design receiver_top has port LEDS_O[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SpiRx/bitcnt_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SpiTx/bitcnt0_inferred /\SpiTx/bitcnt_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\QLINK1/nxt_enc_data_reg[7] )
 WARNING: [Synth 8-3332] Sequential element (QLINK1/ENCODE/data_reg[7]) is unused and will be removed from module receiver_top.
 WARNING: [Synth 8-3332] Sequential element (QLINK1/rd_reg) is unused and will be removed from module receiver_top.
 WARNING: [Synth 8-3332] Sequential element (QLINK1/nxt_enc_data_reg[7]) is unused and will be removed from module receiver_top.
+WARNING: [Synth 8-3332] Sequential element (SpiRx/bitcnt_reg[0]) is unused and will be removed from module receiver_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 9025 ; free virtual = 14059
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7650 ; free virtual = 13014
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -817,18 +849,17 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5578] Moved timing constraint from pin 'SpiClk/spi_clk_gen_i/clk_wiz_0/clk_in1' to pin 'QLINK1/MMCM48_INST/MMCME2_BASE_inst/CLKOUT0'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'SpiClk/spi_clk_gen_i/clk_wiz_0/clk_out1' to pin 'SpiClk/spi_clk_gen_i/clk_wiz_0/bbstub_clk_out1/O'
-INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'SpiClk/spi_clk_gen_i/clk_wiz_0/clk_in1' to 'i_2/QLINK1/clk_cnt_reg[0]/C'
-INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+WARNING: [Synth 8-565] redefining clock 'CLK100_I'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1676.461 ; gain = 438.512 ; free physical = 8713 ; free virtual = 13915
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 1682.457 ; gain = 444.512 ; free physical = 7551 ; free virtual = 12915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8520 ; free virtual = 13854
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1696.480 ; gain = 458.535 ; free physical = 7536 ; free virtual = 12900
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -840,7 +871,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8495 ; free virtual = 13844
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:29 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7532 ; free virtual = 12896
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -864,7 +895,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8411 ; free virtual = 13832
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -877,7 +908,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8410 ; free virtual = 13832
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -889,25 +920,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8405 ; free virtual = 13830
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8404 ; free virtual = 13830
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8401 ; free virtual = 13829
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8401 ; free virtual = 13829
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -927,19 +958,19 @@ Report Cell Usage:
 |1     |spi_clk_gen_clk_wiz_0_0_bbox_0 |     1|
 |2     |BUFG                           |     2|
 |3     |CARRY4                         |     8|
-|4     |LUT1                           |     8|
-|5     |LUT2                           |    39|
-|6     |LUT3                           |    84|
-|7     |LUT4                           |    43|
-|8     |LUT5                           |   109|
-|9     |LUT6                           |   138|
-|10    |MMCME2_BASE                    |     1|
-|11    |MUXF7                          |     7|
-|12    |MUXF8                          |     1|
+|4     |IDDR                           |     1|
+|5     |LUT1                           |     8|
+|6     |LUT2                           |    32|
+|7     |LUT3                           |    41|
+|8     |LUT4                           |    59|
+|9     |LUT5                           |    73|
+|10    |LUT6                           |   198|
+|11    |MMCME2_BASE                    |     1|
+|12    |ODDR                           |     2|
 |13    |RAMB36E1                       |     2|
-|14    |FDRE                           |   259|
-|15    |FDSE                           |     2|
-|16    |IBUF                           |     4|
+|14    |FDRE                           |   256|
+|15    |FDSE                           |     4|
+|16    |IBUF                           |     3|
 |17    |OBUF                           |    12|
 +------+-------------------------------+------+
 
@@ -947,38 +978,39 @@ Report Instance Areas:
 +------+------------------+--------------------+------+
 |      |Instance          |Module              |Cells |
 +------+------------------+--------------------+------+
-|1     |top               |                    |   720|
-|2     |  QLINK1          |QLinkMaster         |   560|
-|3     |    DECODE        |decode_serial       |   158|
-|4     |    ENCODE        |encode_serial       |    42|
+|1     |top               |                    |   703|
+|2     |  QLINK1          |QLinkMaster         |   547|
+|3     |    DECODE        |decode_serial       |   160|
+|4     |    ENCODE        |encode_serial       |    40|
 |5     |    MMCM48_INST   |mmcm48              |     2|
 |6     |  RAM0            |block_RAM_module    |     2|
 |7     |  SpiClk          |spi_clk_gen_wrapper |     1|
 |8     |    spi_clk_gen_i |spi_clk_gen         |     1|
-|9     |  SpiRx           |SPI_RX              |    78|
+|9     |  SpiRx           |SPI_RX              |    75|
 |10    |  SpiTx           |SPI_TX              |    61|
 +------+------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.484 ; gain = 458.535 ; free physical = 8400 ; free virtual = 13830
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.488 ; gain = 466.543 ; free physical = 7533 ; free virtual = 12897
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1696.484 ; gain = 174.535 ; free physical = 8438 ; free virtual = 13881
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1696.492 ; gain = 458.535 ; free physical = 8447 ; free virtual = 13891
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1704.488 ; gain = 176.543 ; free physical = 7589 ; free virtual = 12953
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 1704.496 ; gain = 466.543 ; free physical = 7589 ; free virtual = 12953
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-148 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
+151 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 1728.500 ; gain = 502.117 ; free physical = 8375 ; free virtual = 13875
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1736.504 ; gain = 510.125 ; free physical = 7594 ; free virtual = 12958
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/jacoboffersen/advanced_programmable_electronics/QLink_/QLink.runs/synth_1/receiver_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file receiver_top_utilization_synth.rpt -pb receiver_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1752.512 ; gain = 0.000 ; free physical = 8341 ; free virtual = 13866
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 24 09:02:42 2020...
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1760.516 ; gain = 0.000 ; free physical = 7593 ; free virtual = 12958
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 26 14:48:45 2020...

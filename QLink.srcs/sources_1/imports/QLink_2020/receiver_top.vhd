@@ -58,7 +58,8 @@ end component;
 --end component;
 
 component block_RAM_module is
- Port ( CLK_I      : in  STD_LOGIC := '0';
+ Port ( CLKA_I    : in  STD_LOGIC := '0';
+        CLKB_I    : in  STD_LOGIC := '0';
         RESET_I    : in  STD_LOGIC := '0';
         -- QLink <-> RAM
         ADDR_BA_I  : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
@@ -169,7 +170,8 @@ QLINK1: QLinkMaster
 
 
 RAM0: block_RAM_module
-port map(   CLK_I      => clk_spi,
+port map(   CLKA_I     => clk48,
+            CLKB_I     => clk_spi,
             RESET_I    => sys_reset,
             -- Port A. Qlink <-> RAM
             ADDR_BA_I  => adr_A,
@@ -190,7 +192,7 @@ port map(   CLK_I      => clk_spi,
 
 SpiClk: spi_clk_gen_wrapper 
 port map(
-    clk_in1_0   => clk48,
+    clk_in1_0   => clk100_I,
     clk_out1_0  => clk_spi
   );
 --clk_spi <= CLK48;

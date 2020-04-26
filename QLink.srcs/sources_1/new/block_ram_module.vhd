@@ -9,8 +9,9 @@ use UNISIM.vcomponents.all;
 
 
 entity block_RAM_module is
-    Port ( CLK_I    : in  STD_LOGIC := '0';
-           RESET_I  : in  STD_LOGIC := '0';
+    Port ( CLKA_I    : in  STD_LOGIC := '0';
+           CLKB_I    : in  STD_LOGIC := '0';
+           RESET_I   : in  STD_LOGIC := '0';
            -- QLink <-> RAM
            ADDR_BA_I : in  STD_LOGIC_VECTOR (7  downto 0) := (others => '0');
            DATA_BA_I : in  STD_LOGIC_VECTOR (31 downto 0) := (others => '0');
@@ -297,7 +298,7 @@ UNISIM_RAM0 : RAMB36E1
       -- Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
       -- when RAM_MODE="SDP")
       ADDRARDADDR       => portA_0_addr,        -- 16-bit input: A port address/Read address
-      CLKARDCLK         => CLK_I,               -- 1-bit input: A port clock/Read clock
+      CLKARDCLK         => CLKA_I,               -- 1-bit input: A port clock/Read clock
       ENARDEN           => portA_0_en,          -- 1-bit input: A port enable/Read enable
       REGCEAREGCE       => '1',                 -- 1-bit input: A port register enable/Register enable
       RSTRAMARSTRAM     => '0',                 -- 1-bit input: A port set/reset
@@ -309,7 +310,7 @@ UNISIM_RAM0 : RAMB36E1
       -- Port B Address/Control Signals: 16-bit (each) input: Port B address and control signals (write port
       -- when RAM_MODE="SDP")
       ADDRBWRADDR       => portB_0_addr,        -- 16-bit input: B port address/Write address
-      CLKBWRCLK         => CLK_I,               -- 1-bit input: B port clock/Write clock
+      CLKBWRCLK         => CLKB_I,               -- 1-bit input: B port clock/Write clock
       ENBWREN           => portB_0_en,          -- 1-bit input: B port enable/Write enable
       REGCEB            => '1',                 -- 1-bit input: B port register enable
       RSTRAMB           => '0',                 -- 1-bit input: B port set/reset
@@ -532,7 +533,7 @@ UNISIM_RAM1 : RAMB36E1
     -- Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
     -- when RAM_MODE="SDP")
     ADDRARDADDR     => portA_1_addr,         -- 16-bit input: A port address/Read address
-    CLKARDCLK       => CLK_I,                -- 1-bit input: A port clock/Read clock
+    CLKARDCLK       => CLKA_I,                -- 1-bit input: A port clock/Read clock
     ENARDEN         => portA_1_en,           -- 1-bit input: A port enable/Read enable
     REGCEAREGCE     => '1',                  -- 1-bit input: A port register enable/Register enable
     RSTRAMARSTRAM   => '0',                  -- 1-bit input: A port set/reset
@@ -544,7 +545,7 @@ UNISIM_RAM1 : RAMB36E1
     -- Port B Address/Control Signals: 16-bit (each) input: Port B address and control signals (write port
     -- when RAM_MODE="SDP")
     ADDRBWRADDR     => portB_1_addr,         -- 16-bit input: B port address/Write address
-    CLKBWRCLK       => CLK_I,                -- 1-bit input: B port clock/Write clock
+    CLKBWRCLK       => CLKB_I,                -- 1-bit input: B port clock/Write clock
     ENBWREN         => portB_1_en,           -- 1-bit input: B port enable/Write enable
     REGCEB          => '1',                  -- 1-bit input: B port register enable
     RSTRAMB         => '0',                  -- 1-bit input: B port set/reset

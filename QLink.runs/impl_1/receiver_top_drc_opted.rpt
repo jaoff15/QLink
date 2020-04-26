@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Apr 24 09:03:27 2020
+| Date         : Sun Apr 26 14:49:35 2020
 | Host         : JacobOffersen running 64-bit Ubuntu 19.10
 | Command      : report_drc -file receiver_top_drc_opted.rpt -pb receiver_top_drc_opted.pb -rpx receiver_top_drc_opted.rpx
 | Design       : receiver_top
@@ -67,6 +67,7 @@ Resolution: A dedicated routing path between the two can be used if: (a) The clo
 
 	CLK100_I_IBUF_inst (IBUF.O) is locked to L5
 	QLINK1/MMCM48_INST/MMCME2_BASE_inst (MMCME2_ADV.CLKIN1) cannot be placed
+	SpiClk/spi_clk_gen_i/clk_wiz_0/inst/mmcm_adv_inst (MMCME2_ADV.CLKIN1) cannot be placed
 
 Related violations: <none>
 

@@ -37,7 +37,9 @@ Compiling module xil_defaultlib.spi_clk_gen_clk_wiz_0_0_clk_wiz
 Compiling module xil_defaultlib.spi_clk_gen_clk_wiz_0_0
 Compiling architecture structure of entity xil_defaultlib.spi_clk_gen [spi_clk_gen_default]
 Compiling architecture structure of entity xil_defaultlib.spi_clk_gen_wrapper [spi_clk_gen_wrapper_default]
+Compiling architecture oddr_v of entity unisim.ODDR [\ODDR(ddr_clk_edge="SAME_EDGE")(...]
 Compiling architecture behavioral of entity xil_defaultlib.SPI_TX [spi_tx_default]
+Compiling architecture iddr_v of entity unisim.IDDR [\IDDR(ddr_clk_edge="SAME_EDGE_PI...]
 Compiling architecture behavioral of entity xil_defaultlib.SPI_RX [spi_rx_default]
 Compiling architecture rtl of entity xil_defaultlib.receiver_top [receiver_top_default]
 Compiling architecture behavioral of entity xil_defaultlib.qlink_tb
